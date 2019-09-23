@@ -24,16 +24,16 @@ class Registration extends React.Component {
         });
     };
 
-    // const handleSubmit = e => {
-    //     e.preventDefault();
-    //     // this.props.addUser(user)
-    //     // props.history.push('/protected');
-    //     // console.log('reg: ',props.history)
-    //   }
+    handleSubmit = e => {
+        e.preventDefault();
+        // const { userfirstname, userlastname, useremail, userphone, password } = this.state;
+        this.props.addUser(this.state);
+        this.props.history.push('/protected');
+    }
 
     render(){
         return(
-            <form>
+            <form onSubmit={this.handleSubmit}>
                  <input 
                  type="text" 
                  name="userfirstname" 
@@ -58,7 +58,13 @@ class Registration extends React.Component {
                  onChange={this.state.userphone} 
                  value={this.state.userphone} required />
 
+                <input 
+                 type="password" 
+                 name="password" 
+                 onChange={this.state.password} 
+                 value={this.state.password} required />
 
+            <button type="submit">Submit</button>
             </form>
         )
     }

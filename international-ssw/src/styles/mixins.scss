@@ -1,0 +1,16 @@
+//parametric mixin
+
+@mixin custom-button ($width: 200px, $height: 35px, $font-size: 1.6rem) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white ;
+    background: $blue;
+    width: $width;
+    height: $height;
+    font-size: 2rem;
+    border-radius: 15px;
+    font-size: $font-size;
+    text-decoration: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+}
