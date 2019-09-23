@@ -28,7 +28,7 @@ export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
 export const addUser = (index) => dispatch => {
     dispatch({type: ADD_USER})
     axios
-        .post(`jondscott21-internationschool.herokuapp.com/createnewuser`, index)
+        .post(`https://jondscott21-internationschool.herokuapp.com/createnewuser`, index)
         .then(res => {
             console.log(res.data)
             dispatch({ type: REGISTRATION_SUCCESS, payload: res.data });

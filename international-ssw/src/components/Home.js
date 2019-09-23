@@ -23,15 +23,14 @@ const Home = () => {
     return (
         <Container>
             <Header>
-                <img src="../../public/assets/educell_logo.jpg" alt="Educell Logo"/>
+                <img src="../../../assets/educell_logo.jpg" alt="Educell Logo"/>
                 <Login/>
             </Header>
 
-            <div>
-                <img/>
+            <Body>
+                <img src="../../../assets/home_img.jpg" alt="User Quote"/>
                 <Registration/>
-
-            </div>
+            </Body>
 
         </Container>
     )
