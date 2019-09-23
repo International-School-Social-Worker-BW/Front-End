@@ -4,8 +4,9 @@ export const LOGIN_START ="LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
-export const login = (useremail, password) => dispatch => {
-  dispatch({LOGIN_START})
+export const login = ({useremail, password}, {props}) => dispatch => {
+  // console.log(props.history)
+  dispatch({ type: LOGIN_START });
   axios
   .post(`https://jondscott21-internationschool.herokuapp.com/login`,
     `grant_type=password&username=${useremail}&password=${password}`,
@@ -17,15 +18,20 @@ export const login = (useremail, password) => dispatch => {
     }
   )
   .then(res => localStorage.setItem("token", res.data.access_token))
-  .catch(err => console.log(err));
-}
-
+  .then(props.history.push('/protected'))
+  .catch(res => {
+    dispatch({      
+      type: LOGIN_FAILURE,
+      payload: res.data
+    });
+  });
+};
 
 export const ADD_USER = "ADD_USER";
 export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
 export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
 
-export const addUser = (index) => dispatch => {
+export const addUser = (index, props) => dispatch => {
     dispatch({type: ADD_USER})
     axios
         .post(`https://jondscott21-internationschool.herokuapp.com/createnewuser`, index)

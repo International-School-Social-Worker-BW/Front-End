@@ -8,6 +8,7 @@ import PrivateRoute from './utils/PrivateRoute.js';
 // import Registration from './components/Registration.js';
 import UserHomePage from './components/UserHomePage.js';
 import Home from './components/Home.js';
+import RoleSelect from './components/RoleSelect.js';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Switch>
           <Route exact path='/' component={Home} />
           <PrivateRoute path='/protected' component={UserHomePage} />
+          <PrivateRoute path='/role' component={RoleSelect} />
+
       </Switch>
     
       

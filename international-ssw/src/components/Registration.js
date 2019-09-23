@@ -1,25 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components"
+//actions
+import { addUser } from '../store/actions'
+import '../styles/sign-up.scss'
+import '../styles/variables.scss'
 
 const Input = styled.div `
     display: flex;
     flex-direction: column;
+    text-align: left;
 `
 
 const FormContainer = styled.div `
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 500px;
     border: 2px solid $primary-color;
+    border-radius: 5px;
+`
+const FormTitle = styled.h1 `
+    font-size:4rem;
+    color: #384148;
 `
 
-//actions
-import { addUser } from '../store/actions'
 
 class Registration extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             //user sign up form here
             userfirstname: '',
@@ -27,13 +35,10 @@ class Registration extends React.Component {
             useremail: '',
             userphone: '',
             password: '',
-            
-        },
-
-        // schoolOptions: ['Ghana Makes A Difference', 'Social Workers of Ghana', 'SCEF'];
+            organization: ''            
+        }
     };
 
-    
 
     handleChange = e => {
         this.setState({
@@ -44,21 +49,26 @@ class Registration extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        // const { userfirstname, userlastname, useremail, userphone, password } = this.state;
-        this.props.addUser(this.state);
-        this.props.history.push('/protected');
+        //const { userfirstname, userlastname, useremail, userphone, password } = this.state;
+        this.props.addUser(this.state, this.props);
+        this.props.props.history.push('/role');
     }
 
+    
+
     render(){
+        console.log("reg page", this.props);
         return(
             <form onSubmit={this.handleSubmit}>
                 <FormContainer>
+
+                <FormTitle>Sign Up Today</FormTitle>
                 <Input>
                     <label>First Name</label>
                     <input 
                     type="text" 
                     name="userfirstname" 
-                    onChange={this.state.userfirstname} 
+                    onChange={this.handleChange} 
                     value={this.state.userfirstname} required />
                 </Input>
 
@@ -67,7 +77,7 @@ class Registration extends React.Component {
                 <input 
                 type="text" 
                 name="userlastname" 
-                onChange={this.state.userlastname} 
+                onChange={this.handleChange} 
                 value={this.state.userlastname} required />
                 </Input>
 
@@ -76,7 +86,7 @@ class Registration extends React.Component {
                 <input 
                 type="text" 
                 name="useremail" 
-                onChange={this.state.useremail} 
+                onChange={this.handleChange} 
                 value={this.state.useremail} required />
                 </Input>
 
@@ -85,7 +95,7 @@ class Registration extends React.Component {
                 <input 
                 type="text" 
                 name="userphone" 
-                onChange={this.state.userphone} 
+                onChange={this.handleChange} 
                 value={this.state.userphone} required />
                 </Input>
 
@@ -94,19 +104,23 @@ class Registration extends React.Component {
                 <input 
                 type="password" 
                 name="password" 
-                onChange={this.state.password} 
+                onChange={this.handleChange} 
                 value={this.state.password} required />
                 </Input>
 
                 <label>Select an Organization</label>
-                <select>
-                    <option selected value="school-one">school-one</option>
-                    <option value="school-two">school-two</option>
-                    <option value="school-two">school-three</option>
+                <select
+                    value={this.state.organization}
+                    onChange={this.handleChange}
+                >
+                    <option name="organization">Ghana Makes A Difference</option>
+                    <option name="organization">Social Workers of Ghana</option>
+                    <option name="organization">SCEF</option>
                 </select>
-                </FormContainer>
 
-            <button type="submit">Submit</button>
+
+            <button className = "registration-btn" type="submit">Submit</button>
+            </FormContainer>
             </form>
         )
     }
