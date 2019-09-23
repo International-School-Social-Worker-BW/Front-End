@@ -13,3 +13,5 @@
 
 
 -Redux-thunk:             yarn add redux-thunk
+
+-Styled-components:       yarnd add styled-components
