@@ -10,3 +10,6 @@
 
 
 -Axios                    yarn add axios
+
+
+-Redux-thunk:             yarn add redux-thunk

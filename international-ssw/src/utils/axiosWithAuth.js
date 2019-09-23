@@ -4,11 +4,11 @@ export const axiosWithAuth = () => {
   const token = localStorage.getItem('token');
 
   return axios.create({
-    baseURL: '',
+    baseURL: 'jondscott21-internationschool.herokuapp.com/',
     headers: {
       Authorization: token
     }
   });
 };
 
-//add baseURL when ready
+//[ Base URL: jondscott21-internationschool.herokuapp.com/ ]
