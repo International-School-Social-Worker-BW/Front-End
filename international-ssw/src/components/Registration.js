@@ -13,7 +13,8 @@ class Registration extends React.Component {
             userlastname:'',
             useremail: '',
             userphone: '',
-            password: ''
+            password: '',
+            
         }
     };
 
@@ -63,6 +64,12 @@ class Registration extends React.Component {
                  name="password" 
                  onChange={this.state.password} 
                  value={this.state.password} required />
+
+                 <select>
+                     <option value="school-one">school-one</option>
+                     <option value="school-two">school-two</option>
+                     <option value="school-two">school-three</option>
+                 </select>
 
             <button type="submit">Submit</button>
             </form>
