@@ -12,7 +12,7 @@ import Home from './components/Home.js';
 function App() {
   return (
     <div className="App">
-      <h1>test</h1>
+      
       <Switch>
           <Route exact path='/' component={Home} />
           <PrivateRoute path='/protected' component={UserHomePage} />
