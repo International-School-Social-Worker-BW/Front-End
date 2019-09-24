@@ -3,13 +3,27 @@
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
 
-const UserHomePage = props => {
-    return (
-        <div>
-            <ProtectedNavBar />
+import React from 'react';
+import { ProtectedNavBar } from './ProtectedNavBar';
+import { StudentsTable } from './StudentsTable/StudentsTable';
+import Pagination from './Pagination.js';
 
+export const UserHomePage = () => {
+
+  return (
+    <section className="home-page">
+      <ProtectedNavBar />
+      <div className="container home-page-content">
+        <div className="home-page-search">
+          <input type="text" placeholder="Search student" name='query'/>
         </div>
-    )
-}
 
-export default UserHomePage;
+        <div className="student-list">
+          <StudentsTable />
+        </div>
+
+        <Pagination />
+      </div>
+    </section>
+  )
+}

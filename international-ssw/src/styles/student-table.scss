@@ -1,0 +1,49 @@
+.home-page-header {
+  padding: 0.8em 0 0.2em;
+  color: $dark-grey;
+  display: inline-block;
+  border-bottom: 1px solid $dark-grey;
+}
+
+.home-page-search {
+  width: 40%;
+  margin: 2em 0;
+}
+
+.home-page-search input {
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #dbe0e3;
+  color: $dark-grey;
+  font-size: 1.3em;
+}
+
+.table-bordered {
+  border: 1px solid #ddd !important;
+}
+
+table caption {
+	padding: .5em 0;
+}
+
+@media screen and (max-width: 767px) {
+  table caption {
+    display: none;
+  }
+}
+
+.p {
+  text-align: center;
+  padding-top: 140px;
+  font-size: 1.2em;
+}
+
+.table thead {
+  font-size: 1.6em;
+}
+
+.table tbody {
+  font-size: 1.3em;
+}
