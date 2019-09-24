@@ -52,7 +52,7 @@ class Registration extends React.Component {
         e.preventDefault();
         //const { userfirstname, userlastname, useremail, userphone, password } = this.state;
         this.props.addUser(this.state, this.props);
-        this.props.props.history.push('/role');
+        this.props.props.history.push('/protected');
     }
 
     
@@ -61,7 +61,7 @@ class Registration extends React.Component {
         console.log("reg page", this.props);
         return(
             <form className = "registration-form" onSubmit={this.handleSubmit}>
-                <FormTitle>Sign Up Today</FormTitle>
+                <FormTitle className ="form-title">Sign Up Today</FormTitle>
                 <Input className="registration-input">
                     <label>First Name</label>
                     <input 
@@ -83,7 +83,7 @@ class Registration extends React.Component {
                 <Input className="registration-input">
                 <label>Email</label>
                 <input 
-                type="text" 
+                type="email" 
                 name="useremail" 
                 onChange={this.handleChange} 
                 value={this.state.useremail} required />

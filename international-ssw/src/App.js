@@ -8,8 +8,11 @@ import Login from './components/Login.js';
 import Registration from './components/Registration.js';
 import { UserHomePage } from './components/UserHomePage.js';
 import Home from './components/Home.js';
-import { ProtectedNavBar } from './components/ProtectedNavBar';
+import AddStudent from './components/AddStudent.js';
 import RoleSelect from './components/RoleSelect.js';
+import LoginPage from './components/LoginPage.js';
+import RegistrationPage from './components/RegistrationPage.js';
+
 
 function App() {
   return (
@@ -17,8 +20,9 @@ function App() {
       <Switch>
           <Route exact path='/' component={Home} />
           <Route  path='/about' component={Home} />
-          <Route path='/login' component={Login} /> {/* this needs to have a page built to render the Login component */}
-          <Route path='/signup' component={Registration} /> {/* this needs to have a page built to render the Registration component */}
+          <Route path='/add' component={AddStudent} />
+          <Route path='/signin' component={LoginPage} /> {/* this needs to have a page built to render the Login component */}
+          <Route path='/signup' component={RegistrationPage} /> {/* this needs to have a page built to render the Registration component */}
           <PrivateRoute path='/protected' component={UserHomePage} />
           <PrivateRoute path='/role' component={RoleSelect} />
 

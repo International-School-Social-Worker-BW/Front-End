@@ -58,7 +58,7 @@ export const ROLE_FAILURE = "ROLE_FAILURE";
 
 export const addRole = (index, props) => dispatch => {
   dispatch({type: ADD_ROLE})
-  axiosWithAuth.post(`/addNewRole`, index)
+  axiosWithAuth().post(`https://jondscott21-internationschool.herokuapp.com/users/user/${props.userid}/role/{roleid}`, index)
       .then(res => {
           console.log(res.data)
           dispatch({ type: ROLE_SUCCESS, payload: res.data });
@@ -69,3 +69,43 @@ export const addRole = (index, props) => dispatch => {
           dispatch({ type: ROLE_FAILURE, payload: err.response });
         });
 };
+
+export const FETCH_START = "FETCH_START";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAILURE = "FETCH_FAILURE";
+
+export const fetchStudents = index =>dispatch => {
+  console.log("inaction");
+  dispatch({ type: FETCH_START});
+  axiosWithAuth()
+    .get(`https://jondscott21-internationschool.herokuapp.com/students/students`)
+    .then(res => {
+      console.log('fetched items', res)
+      dispatch({type:FETCH_SUCCESS, payload:res.data})
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+};
+
+export const ADD_STUDENT = "ADD_STUDENT";
+export const STUDENT_SUCCESS = "STUDENT_SUCCESS";
+export const STUDENT_FAILURE = "STUDENT_FAILURE";
+
+export const addStudent = (index, props) => dispatch => {
+    dispatch({type: ADD_STUDENT})
+    axios
+        .post(`https://jondscott21-internationschool.herokuapp.com/students/new`, index)
+        .then(res => {
+            console.log(res.data)
+            dispatch({ type: STUDENT_SUCCESS, payload: res.data });
+            return true;
+          })
+          .catch(err => {
+            console.log(err);
+            dispatch({ type: STUDENT_FAILURE, payload: err.response });
+          });
+};
+
+
