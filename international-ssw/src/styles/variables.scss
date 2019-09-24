@@ -1,6 +1,16 @@
 $font-stack:    Helvetica, sans-serif;
+
+//color assignment
 $primary-color: #384148;
 
+
+//color names
 $blue:  #5DB0C7;
 $white: #fff;
 $dark-grey: #272d34;
+
+
+//media query breakpoints
+$desktop: 1024px;
+$tablet: 1000px;
+$phone: 500px;

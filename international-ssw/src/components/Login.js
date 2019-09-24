@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { connect } from "react-redux";
 
-const Login = ({ history }) => {
+import { login } from '../store/actions';
+
+const Login = (props) => {
    
     const [credentials, setCredentials] = useState({
       username: '',
@@ -13,16 +15,10 @@ const Login = ({ history }) => {
       setCredentials({...credentials, [event.target.name]: event.target.value });
     };
   
-    const login = event => {
+    const handleSubmit = event => {
       event.preventDefault();
-      axiosWithAuth()
-        .post('/login', credentials)
-        .then(res => {
-          localStorage.setItem('token', res.data.payload);
-          history.push('/protected');
-        })
-        .catch(err => console.log(err));
-    };
+      props.login(credentials, props);
+    }
   
     return (
 
@@ -34,7 +30,7 @@ const Login = ({ history }) => {
           <div className="login-header">
             Sign In
           </div>
-          <form className='login-form'>      
+          <form className='signin-form' onSubmit={handleSubmit}>      
             <div className="text-input">
               <label htmlFor="username">Email or Username</label>
               <input
@@ -63,4 +59,8 @@ const Login = ({ history }) => {
     );
   };
   
-  export default Login;
+const mapStateToProps = state => {
+    return {error: state.error}
+}
+
+export default connect(mapStateToProps, { login })(Login);

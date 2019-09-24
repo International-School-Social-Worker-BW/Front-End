@@ -40,15 +40,16 @@
   padding-bottom: 1.5em;
 }
 
-.login-form {
+.signin-form {
   width: 100%;
 }
 
-.login-form label {
+.signin-form label {
   font-size: 1.2em;
+  font-weight: normal;
 }
 
-.login-form input {
+.signin-form input {
   outline: none;
   border: 1px solid #C1C5C8;
   font-size: 1.2em;
@@ -58,11 +59,14 @@
   margin-bottom: 1em;
 }
 
-.login-form button {
+.signin-form button {
   background: $blue;
   color: white;
   width: 100%;
   padding: 0.5em 1em;
   border: 1px solid $blue;
   font-size: 1.2em;
+  &:hover {
+    background: darken($blue, 10%);
+  }
 }
