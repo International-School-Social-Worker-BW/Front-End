@@ -1,20 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import styled from "styled-components";
 
-import '../styles/sign-up.scss';
-import '../styles/variables.scss';
 import { login } from '../store/actions';
 
-const Input = styled.div `
-    display: flex;
-    flex-direction: column;
-`
-
-
-
-
 const Login = (props) => {
+   
     const [credentials, setCredentials] = useState({
       username: '',
       password: ''
@@ -29,39 +19,47 @@ const Login = (props) => {
       event.preventDefault();
       props.login(credentials, props);
     }
-        
-    return (
-      <>
-        <form className='login-form' onSubmit={handleSubmit}>
-          
-          <Input className = "login-input">
-          <label className = "login-label">Email</label>
-          <input
-              type='text'
-              name='username'
-              onChange={handleChange}
-              value={credentials.username}
-              required
-          />
-          </Input>
-
-          <Input className = "login-input">
-          <label className = "login-label">Password</label>
-          <input
-              type='password'
-              name='password'
-              onChange={handleChange}
-              value={credentials.password}
-              required
-          />
-          </Input>
-          <button className = "login-btn">Login</button>
   
-        </form>
-      </>
+    return (
+
+      <div className="login-section">
+        <div className="logo-title">
+          Educell
+        </div>
+        <div className="login-page">
+          <div className="login-header">
+            Sign In
+          </div>
+          <form className='signin-form' onSubmit={handleSubmit}>      
+            <div className="text-input">
+              <label htmlFor="username">Email or Username</label>
+              <input
+                id="username"
+                type='text'
+                name='username'
+                onChange={handleChange}
+                value={credentials.username}
+                required
+              />
+            </div>
+            <div className="password-input">
+              <label htmlFor="password">Password</label>
+              <input
+                  type='password'
+                  name='password'
+                  onChange={handleChange}
+                  value={credentials.password}
+                  required
+                />
+            </div>
+            <button onClick={login}>Login</button>
+          </form>
+        </div>
+      </div>
     );
   };
-  const mapStateToProps = state => {
+  
+const mapStateToProps = state => {
     return {error: state.error}
 }
 

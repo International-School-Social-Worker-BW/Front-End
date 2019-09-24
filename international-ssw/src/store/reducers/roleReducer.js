@@ -13,7 +13,7 @@ import {
   
 export const roleReducer = (state = initialState, action) => {
     switch (action.type) {
-      case ADD_ROLE
+      case ADD_ROLE:
         return {
           ...state,
           error: '',

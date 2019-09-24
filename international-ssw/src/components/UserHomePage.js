@@ -2,9 +2,6 @@
 //have an add student button, and also have a nav bar
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
-
-import React from 'react';
-import { ProtectedNavBar } from './ProtectedNavBar';
 import { StudentsTable } from './StudentsTable/StudentsTable';
 import Pagination from './Pagination.js';
 
