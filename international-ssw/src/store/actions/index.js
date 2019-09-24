@@ -5,8 +5,8 @@ export const LOGIN_START ="LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
-export const login = ({useremail, password}, {props}) => dispatch => {
- 
+export const login = ({useremail, password}, props) => dispatch => {
+ console.log(useremail, password, props);
   dispatch({ type: LOGIN_START });
   axios
   .post(`https://jondscott21-internationschool.herokuapp.com/login`,
@@ -18,13 +18,13 @@ export const login = ({useremail, password}, {props}) => dispatch => {
       }
     }
   )
-  // .then(res => localStorage.setItem("token", res.data.access_token))
+      .then(res => localStorage.setItem("token", res.data.access_token))
   // .then(props.history.push('/protected'))
-      .then(res => {
-        dispatch({ type: LOGIN_SUCCESS, payload: res.data});
-        return true;
-      })
-      .then(props.history.push('/protected'))
+      // .then(res => {
+      //   dispatch({ type: LOGIN_SUCCESS, payload: res.data});
+      //   return true;
+      // })
+      .then(res => props.props.history.push('/protected'))
   .catch(res => {
     dispatch({      
       type: LOGIN_FAILURE,
@@ -84,7 +84,7 @@ export const fetchStudents = index =>dispatch => {
       dispatch({type:FETCH_SUCCESS, payload:res.data})
     })
     .catch(err => {
-      console.log(err);
+      console.log("fetchstudent", err.response);
       dispatch({type: FETCH_FAILURE, payload: err.response})
     });
 };

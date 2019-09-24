@@ -6,7 +6,7 @@ import PrivateRoute from './utils/PrivateRoute.js';
 
 import Login from './components/Login.js';
 import Registration from './components/Registration.js';
-import { UserHomePage } from './components/UserHomePage.js';
+import UserHomePage  from './components/UserHomePage.js';
 import Home from './components/Home.js';
 import AddStudent from './components/AddStudent.js';
 import RoleSelect from './components/RoleSelect.js';
