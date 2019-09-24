@@ -1,10 +1,93 @@
 
 
 .login-page .login-form .login-btn {
-    background:red;
+    background:#5DB0C7;
+    color: white;
+    width: 500px;
+    margin-top:15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+
+    &:hover{
+        cursor: pointer;
+        background: #6AC4DE;
+    }
+    
 }
 
 .login-page {
-    background: black;
-    height:100%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    height: 1024px;
+    background-color: grey;
+    // background-image: url('../../assets/school_kids.jpg');
+}
+
+
+.login-page img {
+    width: 100%;
+    height: auto;
+}
+
+
+.login-page .login-form {
+    flex-direction: column;
+    align-items:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 60%;
+    margin:0;
+    padding:5%;
+    // transform: translate(-50%, -50%);
+}
+
+
+.login-page .login-input input{
+    width:500px;
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+.login-page .login-input {
+    margin-bottom: 5%;
+}
+
+
+.login-page .title {
+    font-size:4rem;
+    color: white;
+    margin-bottom: 40px;
+    width: 70%;
+    text-align:center;
+}
+
+.login-page .title p {
+    margin: 2%;
+
+}
+
+.login-page .need-account {
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 70%;
+    font-size:2rem;
+    color: white;
+    margin-top: 30px;
+    text-align:center;
+}
+
+.login-page .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top:150px;
+}
+
+.login-page .need-account a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
 }

@@ -6,10 +6,10 @@ import { connect } from "react-redux";
 const StudentCard = (props) => {
     return (
         <div>
-            <h2>Student Name Prop Here</h2>
-            <p>Date of last visit prop here</p>
-            <p>Age Prop here</p>
-            <p>grade prop here</p>
+            <h2>{props.data.studentfirstname} {props.data.studentlastname}</h2>
+            <p>04/03/2019</p>
+            <p>{props.data.age}</p>
+            <p>{props.data.grade}</p>
         </div>
     )
 }

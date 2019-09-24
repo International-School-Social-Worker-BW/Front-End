@@ -27,8 +27,8 @@ const RoleSelect = props => {
                 value= {userrole.userrole}
                 onChange={handleChange}
                 >
-                <option value="School Admin">School Admin</option>
-                <option value="Social Worker">Social Worker</option>
+                <option value="admin">School Admin</option>
+                <option value="user">Social Worker</option>
             </select>
             <button type="submit">Submit</button>
             </form>
