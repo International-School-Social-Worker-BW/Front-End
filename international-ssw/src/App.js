@@ -6,14 +6,13 @@ import PrivateRoute from './utils/PrivateRoute.js';
 
 import Login from './components/Login.js';
 import Registration from './components/Registration.js';
-import UserHomePage from './components/UserHomePage.js';
+import { UserHomePage } from './components/UserHomePage.js';
 import Home from './components/Home.js';
 import { ProtectedNavBar } from './components/ProtectedNavBar';
 
 function App() {
   return (
     <div className="App">
-      
       <Switch>
           <Route exact path='/' component={Home} />
           <Route  path='/about' component={Home} />
@@ -21,8 +20,6 @@ function App() {
           <Route path='/signup' component={Registration} />
           <PrivateRoute path='/protected' component={UserHomePage} />
       </Switch>
-    
-      
     </div>
   );
 }
