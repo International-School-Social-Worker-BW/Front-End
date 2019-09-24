@@ -17,15 +17,22 @@
   }
 
   nav {
-    width: 40%;
+    width: 50%;
     ul.main-menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-  
-  }
 
+      li:first-child {
+        margin-left: auto;
+      }
+
+    }
+  }
+}
+
+nav li {
+  margin-left: 2.5em;
 }
 
 .header-nav a {

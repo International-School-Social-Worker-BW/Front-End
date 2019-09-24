@@ -8,12 +8,11 @@ import Login from './components/Login.js';
 import Registration from './components/Registration.js';
 import UserHomePage from './components/UserHomePage.js';
 import Home from './components/Home.js';
-import { NavBar } from './components/NavBar';
+import { ProtectedNavBar } from './components/ProtectedNavBar';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
       
       <Switch>
           <Route exact path='/' component={Home} />

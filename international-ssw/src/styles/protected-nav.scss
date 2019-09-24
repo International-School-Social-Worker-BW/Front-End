@@ -1,0 +1,83 @@
+
+.protected-nav {
+  background: $dark-grey;
+}
+
+.protected-nav a {
+  color: $white;
+}
+
+.protected-nav nav {
+  color: $white;
+}
+
+.protected-nav .main-menu {
+  position: relative;
+}
+
+.sub-menu {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 150px;
+    text-align: left;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.27);
+    background-color: #fff;
+    border-radius: 4px;
+    display: none;
+
+    li:first-child {
+      border-radius: 4px;
+    }
+
+    li {
+      a {
+        color: $dark-grey;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+}
+
+.sub-menu li:hover {
+  background-color: #eaeef1;
+}
+
+.user:hover .sub-menu {
+  display: block;
+}
+
+.sub-menu li {
+  padding: .5em 1.2em;
+  margin-left: 0;
+}
+
+
+.home-icon {
+  vertical-align: center;
+  font-size: 1.2em;
+}
+
+.caret {
+  font-size: 1.3em;
+  margin-left: 0.5em;
+  position: relative;
+  top: 0.4em;
+}
+
+.trigger {
+  position: relative;
+  bottom: 0.3em;
+}
+
+.trigger:hover {
+  text-decoration: none;
+}
+
+nav li {
+  margin-left: none;
+}
