@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
 import { login } from '../store/actions';
 
@@ -24,7 +25,7 @@ const Login = (props) => {
 
       <div className="login-section">
         <div className="logo-title">
-          Educell
+          <Link to="/">Educell</Link>
         </div>
         <div className="login-page">
           <div className="login-header">
