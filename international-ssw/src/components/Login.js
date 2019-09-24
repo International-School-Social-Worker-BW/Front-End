@@ -25,6 +25,7 @@ const Login = ({ history }) => {
     };
   
     return (
+
       <div className="login-section">
         <div className="logo-title">
           Educell
@@ -33,8 +34,7 @@ const Login = ({ history }) => {
           <div className="login-header">
             Sign In
           </div>
-          <form className='login-form'>
-            
+          <form className='login-form'>      
             <div className="text-input">
               <label htmlFor="username">Email or Username</label>
               <input
@@ -46,7 +46,6 @@ const Login = ({ history }) => {
                 required
               />
             </div>
-          
             <div className="password-input">
               <label htmlFor="password">Password</label>
               <input
@@ -57,9 +56,7 @@ const Login = ({ history }) => {
                   required
                 />
             </div>
-          
             <button onClick={login}>Login</button>
-          
           </form>
         </div>
       </div>
