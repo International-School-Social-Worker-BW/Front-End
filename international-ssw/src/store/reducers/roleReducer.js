@@ -17,8 +17,7 @@ export const roleReducer = (state = initialState, action) => {
         return {
           ...state,
           error: '',
-          fetchingData: true
-          
+          fetchingData: true          
         };
       case ROLE_SUCCESS:
         return {
@@ -26,8 +25,7 @@ export const roleReducer = (state = initialState, action) => {
           addRole: action.payload,
           error: '',
           fetchingData: false,
-          userrole: action.payload
-          
+          userrole: action.payload          
         };
       case ROLE_FAILURE:
           return {
