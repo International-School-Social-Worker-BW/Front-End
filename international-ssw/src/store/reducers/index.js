@@ -1,9 +1,10 @@
 //combine reducers here
 import { combineReducers } from 'redux';
 import { registrationReducer } from './registrationReducer.js'
-import { loginReducer } from './registrationReducer.js';
+import { loginReducer } from './loginReducer.js';
+import { roleReducer } from './roleReducer.js'
 
 export default combineReducers({
-    registrationReducer
+    registrationReducer, loginReducer, roleReducer
 })
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { connect } from "react-redux"
-import styled from "styled-components"
+import { connect } from "react-redux";
+import styled from "styled-components";
 
-import '../styles/sign-up.scss'
-import '../styles/variables.scss'
+import '../styles/sign-up.scss';
+import '../styles/variables.scss';
 import { login } from '../store/actions';
 
 const Input = styled.div `

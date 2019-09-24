@@ -21,7 +21,7 @@ const Input = styled.div `
 // `
 const FormTitle = styled.h1 `
     font-size:3.5rem;
-    color: #384148;
+    color: #55A0B5;
     text-align: center;
 `
 
