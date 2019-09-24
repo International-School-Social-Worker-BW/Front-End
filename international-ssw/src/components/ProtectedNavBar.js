@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdHome, MdArrowDropDown } from 'react-icons/md'
 
-export const ProtectedNavBar = () => {
+const ProtectedNavBar = () => {
   return (
     <header className='top-header protected-nav'>
       <div className="container header-nav protected-nav">
@@ -41,3 +41,5 @@ export const ProtectedNavBar = () => {
     </header>
   )
 }
+
+export default ProtectedNavBar;

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { connect } from "react-redux"
-import styled from "styled-components"
+import { connect } from "react-redux";
+import styled from "styled-components";
 
-import '../styles/sign-up.scss'
-import '../styles/variables.scss'
+import '../styles/sign-up.scss';
+import '../styles/variables.scss';
 import { login } from '../store/actions';
 
 const Input = styled.div `
     display: flex;
     flex-direction: column;
 `
+
+
+
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({
@@ -31,10 +34,9 @@ const Login = (props) => {
       <>
         <form className='login-form' onSubmit={handleSubmit}>
           
-          <Input>
+          <Input className = "login-input">
           <label className = "login-label">Email</label>
           <input
-            className = "login-label"
               type='text'
               name='username'
               onChange={handleChange}
@@ -43,10 +45,9 @@ const Login = (props) => {
           />
           </Input>
 
-          <Input>
+          <Input className = "login-input">
           <label className = "login-label">Password</label>
           <input
-            className = "login-label"
               type='password'
               name='password'
               onChange={handleChange}
