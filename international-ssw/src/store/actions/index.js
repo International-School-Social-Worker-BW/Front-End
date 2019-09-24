@@ -58,7 +58,7 @@ export const ROLE_FAILURE = "ROLE_FAILURE";
 
 export const addRole = (index, props) => dispatch => {
   dispatch({type: ADD_ROLE})
-  axiosWithAuth.post(`/addNewRole`, index)
+  axiosWithAuth().post(`/addNewRole`, index)
       .then(res => {
           console.log(res.data)
           dispatch({ type: ROLE_SUCCESS, payload: res.data });
@@ -69,3 +69,20 @@ export const addRole = (index, props) => dispatch => {
           dispatch({ type: ROLE_FAILURE, payload: err.response });
         });
 };
+
+export const FETCH_START = "FETCH_START";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAILURE = "FETCH_FAILURE";
+
+export const fetchStudents = index =>dispatch => {
+  dispatch({ type: FETCH_START});
+  axiosWithAuth()
+    .get(`students/students`, index)
+    .then(res => {
+      console.log('fetched items', res)
+      dispatch({type:FETCH_SUCCESS, payload:res.data})
+    })
+    .catch(err => {
+      dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+}

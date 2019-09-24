@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
+import { addRole } from '../store/actions';
+
 
 const RoleSelect = props => {
     const [userrole, setUserrole] = useState({
@@ -13,7 +15,8 @@ const RoleSelect = props => {
     
       const handleSubmit = event => {
         event.preventDefault();
-        props.login(userrole, props);
+        props.addRole(userrole, props);
+        console.log('madeit', userrole);
       }
 
     return (
@@ -24,13 +27,16 @@ const RoleSelect = props => {
                 value= {userrole.userrole}
                 onChange={handleChange}
                 >
-                <option>Schoole Admin</option>
-                <option>Social Worker</option>
+                <option value="School Admin">School Admin</option>
+                <option value="Social Worker">Social Worker</option>
             </select>
             <button type="submit">Submit</button>
             </form>
         </div>
     )
 }
+const mapStateToProps = state => {
+    return {error: state.error}
+}
 
-export default RoleSelect;
+export default connect(mapStateToProps, { addRole })(RoleSelect);
