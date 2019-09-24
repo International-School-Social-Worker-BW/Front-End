@@ -67,7 +67,7 @@ const Home = (props) => {
     return (
         <Container>
             <Header>
-                <Logo src="../../../assets/logo.png" alt="Educell Logo"/>
+                {/* <Logo src="../../../assets/logo.png" alt="Educell Logo"/> */}
                 <Login props={props}/>
             </Header>
 
