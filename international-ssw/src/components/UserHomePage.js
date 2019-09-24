@@ -40,3 +40,4 @@ const mapStateToProps = state =>   ({
     error: state.studentReducer.error
    })
 export default connect(mapStateToProps, { fetchStudents }) (UserHomePage);
+

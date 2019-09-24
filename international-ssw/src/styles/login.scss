@@ -1,0 +1,76 @@
+
+
+.logo-title {
+  color: $dark-grey;
+  opacity: 0.5;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-align: center;
+  padding-bottom: 1em;
+  letter-spacing: 1.9px;
+  a {
+    text-decoration: none;
+    color: $dark-grey;
+  }
+}
+
+.login-page label,
+.login-page input {
+  display: block;
+}
+
+.login-section {
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #eceef1;
+  width: 100%;
+  height: 100vh;
+}
+
+.login-page {
+  background: #fff;
+  width: 40%;
+  padding: 3em;
+}
+
+.login-header {
+  font-size: 2em;
+  color: $dark-grey;
+  line-height: 1.1;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+.signin-form {
+  width: 100%;
+}
+
+.signin-form label {
+  font-size: 1.2em;
+  font-weight: normal;
+}
+
+.signin-form input {
+  outline: none;
+  border: 1px solid #C1C5C8;
+  font-size: 1.2em;
+  padding: 0.3em 1em;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1em;
+}
+
+.signin-form button {
+  background: $blue;
+  color: white;
+  width: 100%;
+  padding: 0.5em 1em;
+  border: 1px solid $blue;
+  font-size: 1.2em;
+  &:hover {
+    background: darken($blue, 10%);
+  }
+}
