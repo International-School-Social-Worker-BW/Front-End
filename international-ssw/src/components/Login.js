@@ -25,28 +25,44 @@ const Login = ({ history }) => {
     };
   
     return (
-      <>
-        <form className='login-form'>
+      <div className="login-section">
+        <div className="logo-title">
+          Educell
+        </div>
+        <div className="login-page">
+          <div className="login-header">
+            Sign In
+          </div>
+          <form className='login-form'>
+            
+            <div className="text-input">
+              <label htmlFor="username">Email or Username</label>
+              <input
+                id="username"
+                type='text'
+                name='username'
+                onChange={handleChange}
+                value={credentials.username}
+                required
+              />
+            </div>
           
-          <input
-              type='text'
-              name='username'
-              onChange={handleChange}
-              value={credentials.username}
-              required
-          />
-          <input
-              type='password'
-              name='password'
-              onChange={handleChange}
-              value={credentials.password}
-              required
-          />
-  
-          <button onClick={login}>Login</button>
-  
-        </form>
-      </>
+            <div className="password-input">
+              <label htmlFor="password">Password</label>
+              <input
+                  type='password'
+                  name='password'
+                  onChange={handleChange}
+                  value={credentials.password}
+                  required
+                />
+            </div>
+          
+            <button onClick={login}>Login</button>
+          
+          </form>
+        </div>
+      </div>
     );
   };
   
