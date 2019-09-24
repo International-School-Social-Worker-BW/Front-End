@@ -52,7 +52,7 @@ class Registration extends React.Component {
         e.preventDefault();
         //const { userfirstname, userlastname, useremail, userphone, password } = this.state;
         this.props.addUser(this.state, this.props);
-        this.props.props.history.push('/role');
+        this.props.props.history.push('/protected');
     }
 
     
