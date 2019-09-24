@@ -83,7 +83,7 @@ class Registration extends React.Component {
                 <Input className="registration-input">
                 <label>Email</label>
                 <input 
-                type="text" 
+                type="email" 
                 name="useremail" 
                 onChange={this.handleChange} 
                 value={this.state.useremail} required />
