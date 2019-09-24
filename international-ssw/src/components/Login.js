@@ -1,8 +1,20 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { connect } from "react-redux";
+import styled from "styled-components";
 
-const Login = ({ history }) => {
-   
+import '../styles/sign-up.scss';
+import '../styles/variables.scss';
+import { login } from '../store/actions';
+
+const Input = styled.div `
+    display: flex;
+    flex-direction: column;
+`
+
+
+
+
+const Login = (props) => {
     const [credentials, setCredentials] = useState({
       username: '',
       password: ''
@@ -13,21 +25,17 @@ const Login = ({ history }) => {
       setCredentials({...credentials, [event.target.name]: event.target.value });
     };
   
-    const login = event => {
+    const handleSubmit = event => {
       event.preventDefault();
-      axiosWithAuth()
-        .post('/login', credentials)
-        .then(res => {
-          localStorage.setItem('token', res.data.payload);
-          history.push('/protected');
-        })
-        .catch(err => console.log(err));
-    };
-  
+      props.login(credentials, props);
+    }
+        
     return (
       <>
-        <form className='login-form'>
+        <form className='login-form' onSubmit={handleSubmit}>
           
+          <Input className = "login-input">
+          <label className = "login-label">Email</label>
           <input
               type='text'
               name='username'
@@ -35,6 +43,10 @@ const Login = ({ history }) => {
               value={credentials.username}
               required
           />
+          </Input>
+
+          <Input className = "login-input">
+          <label className = "login-label">Password</label>
           <input
               type='password'
               name='password'
@@ -42,12 +54,15 @@ const Login = ({ history }) => {
               value={credentials.password}
               required
           />
-  
-          <button onClick={login}>Login</button>
+          </Input>
+          <button className = "login-btn">Login</button>
   
         </form>
       </>
     );
   };
-  
-  export default Login;
+  const mapStateToProps = state => {
+    return {error: state.error}
+}
+
+export default connect(mapStateToProps, { login })(Login);
