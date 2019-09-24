@@ -9,6 +9,7 @@ import Registration from './components/Registration.js';
 import UserHomePage from './components/UserHomePage.js';
 import Home from './components/Home.js';
 import { ProtectedNavBar } from './components/ProtectedNavBar';
+import RoleSelect from './components/RoleSelect.js';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path='/signin' component={Login} />
           <Route path='/signup' component={Registration} />
           <PrivateRoute path='/protected' component={UserHomePage} />
+          <PrivateRoute path='/role' component={RoleSelect} />
+
       </Switch>
     
       
