@@ -1,87 +1,111 @@
-//add student form page
-import React from "react"
-import {connect} from 'react-redux';
-import axios from 'axios';
+// //add student form page
+// import React from "react"
+// import {connect} from 'react-redux';
+// import axios from 'axios';
 
-class AddStudent extend React.Component {
-    state = {
-    studentid: 0,
-    studentfirstname: "",
-    studentlastname: "",
-    age: 0,
-    grade: 0,
-    status: "",
-    birthcertificate: true,
-    insurance: true,
-    specialneeds: false,
-    contactname: "",
-    relationship: "",
-    contactphone: "",
-    contactemail: "",
-    backgroundinfo: "",
-    criticalinfo: "",
-    }
-}
+// class AddStudent extends React.Component {
+    
+//     constructor(props){
+//        super(props);
+//        this.state = {
+//     studentid: null,
+//     studentfirstname: "",
+//     studentlastname: "",
+//     age: null,
+//     grade: null,
+//     status: "",
+//     birthcertificate: true,
+//     insurance: true,
+//     specialneeds: false,
+//     contactname: "",
+//     relationship: "",
+//     contactphone: "",
+//     contactemail: "",
+//     backgroundinfo: "",
+//     criticalinfo: "",
+//     }
+// }
 
-handleSubmit = e => {
-    e.preventDefault()
-    const {
-    studentid: 0,
-    studentfirstname: "",
-    studentlastname: "",
-    age: 0,
-    grade: 0,
-    status: "",
-    birthcertificate: true,
-    insurance: true,
-    specialneeds: false,
-    contactname: "",
-    relationship: "",
-    contactphone: "",
-    contactemail: "",
-    backgroundinfo: "",
-    criticalinfo: "",
-    } =this.state;
+// handleSubmit = e => {
+//     e.preventDefault()
+//     this.props.addStudent(this.state, this.props);
 
-    this.props.addStudent({
-    studentid: 0,
-    studentfirstname: "",
-    studentlastname: "",
-    age: 0,
-    grade: 0,
-    status: "",
-    birthcertificate: true,
-    insurance: true,
-    specialneeds: false,
-    contactname: "",
-    relationship: "",
-    contactphone: "",
-    contactemail: "",
-    backgroundinfo: "",
-    criticalinfo: "",
-    });
 
-    this.props.history.push('/protected');
+//     this.props.history.push('/protected');};
 
-    handleChange = event => {
-        event.preventDefault();
-        this.setState({[event.target.name]: event.target.value});
-      };
+//     handleChange = event => {
+//         event.preventDefault();
+//         this.setState({[event.target.name]: event.target.value});
+//       };
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                <input 
-                type="text" 
-                name="studentfirstname" 
-                onChange={this.handleChange} 
-                value={this.state.studentfirstname} required />
-                </Input>
+//     render() {
+//         return (
+//             <div>
+//                 <form onSubmit={this.handleSubmit}>
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
 
-                </form>
-            </div>
-        )
-    }
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
 
-}
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+//                 <input 
+//                 type="text" 
+//                 name="studentfirstname" 
+//                 onChange={this.handleChange} 
+//                 value={this.state.studentfirstname} required />
+
+               
+
+//                 </form>
+//             </div>
+//         )
+//     }
+// }

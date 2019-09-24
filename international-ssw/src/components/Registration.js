@@ -61,7 +61,7 @@ class Registration extends React.Component {
         console.log("reg page", this.props);
         return(
             <form className = "registration-form" onSubmit={this.handleSubmit}>
-                <FormTitle>Sign Up Today</FormTitle>
+                <FormTitle className ="form-title">Sign Up Today</FormTitle>
                 <Input className="registration-input">
                     <label>First Name</label>
                     <input 
