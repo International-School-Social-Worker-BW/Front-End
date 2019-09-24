@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import logo from '../images';
+import { Link } from 'react-router-dom';
 
 const StyledHeader = styled.header`
   
@@ -9,16 +8,22 @@ const StyledHeader = styled.header`
 
 export const NavBar = () => {
   return (
-    <header>
+    <header className='container header-nav'>
       <div className="logo">
-        <img src={logo} alt="Educell logo" />
+        <Link to="/">Educell</Link>
       </div>
 
       <nav>
-        <ul>
-          <li>About</li>
-          <li>Sign In</li>
-          <li>Join Us</li>
+        <ul className='main-menu'>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/signin">Sign In</Link>
+          </li>
+          <li>
+            <Link to="/signup">Join Us</Link>
+          </li>
         </ul>
       </nav>
 
