@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Login from './Login.js'
 import Registration from './Registration.js'
 
+import { NavBar } from './NavBar';
+
 import '../styles/sign-up.scss'
 import '../styles/variables.scss'
 
@@ -63,25 +65,23 @@ transform: translate(-50%, -50%);
 const Home = (props) => {
 
     return (
+      <div>
+        <NavBar />
         <Container>
-            <Header className = "home-header">
-                <Logo className="logo-img" src="../../../assets/logo.png" alt="Educell Logo"/>
-                <Login props={props}/>
-            </Header>
-
-            <Body className = "body">
-                <ImageContainer className = "home-content">
-                    <Div>
-                        <p className = "logo">Educell</p>
-                        <p className = "moto">Solving educational challenges in remote and low-resource environments</p>
-                        {/* <ImageText className = "image-text"> “Educell helped improve our work flow, making it easier to provide quality care for each of our students” - Ghana Make A Difference </ImageText> */}
-                        <HomeImage src="../../../assets/school_kids.jpg" alt="User Quote"/>
-                    </Div>
-                </ImageContainer>
-                <Registration props={props}/>
-            </Body>
+          <Body className = "body">
+              <ImageContainer className = "home-content">
+                  <Div>
+                      <p className = "logo">Educell</p>
+                      <p className = "moto">Solving educational challenges in remote and low-resource environments</p>
+                      {/* <ImageText className = "image-text"> “Educell helped improve our work flow, making it easier to provide quality care for each of our students” - Ghana Make A Difference </ImageText> */}
+                      <HomeImage src="../../../assets/school_kids.jpg" alt="User Quote"/>
+                  </Div>
+              </ImageContainer>
+              <Registration props={props}/>
+          </Body>
 
         </Container>
+      </div>
     )
 
 }
