@@ -12,16 +12,17 @@ const Input = styled.div `
     text-align: left;
 `
 
-const FormContainer = styled.div `
-    display: flex;
-    flex-direction: column;
-    width: 500px;
-    border: 2px solid $primary-color;
-    border-radius: 5px;
-`
+// const FormContainer = styled.div `
+//     display: flex;
+//     flex-direction: column;
+//     width: 500px;
+//     border: 2px solid $primary-color;
+//     border-radius: 5px;
+// `
 const FormTitle = styled.h1 `
-    font-size:4rem;
+    font-size:3.5rem;
     color: #384148;
+    text-align: center;
 `
 
 
@@ -59,11 +60,9 @@ class Registration extends React.Component {
     render(){
         console.log("reg page", this.props);
         return(
-            <form onSubmit={this.handleSubmit}>
-                <FormContainer>
-
+            <form className = "registration-form" onSubmit={this.handleSubmit}>
                 <FormTitle>Sign Up Today</FormTitle>
-                <Input>
+                <Input className="registration-input">
                     <label>First Name</label>
                     <input 
                     type="text" 
@@ -72,7 +71,7 @@ class Registration extends React.Component {
                     value={this.state.userfirstname} required />
                 </Input>
 
-                <Input>
+                <Input className="registration-input">
                 <label>Last Name</label>
                 <input 
                 type="text" 
@@ -81,7 +80,7 @@ class Registration extends React.Component {
                 value={this.state.userlastname} required />
                 </Input>
 
-                <Input>
+                <Input className="registration-input">
                 <label>Email</label>
                 <input 
                 type="text" 
@@ -90,7 +89,7 @@ class Registration extends React.Component {
                 value={this.state.useremail} required />
                 </Input>
 
-                <Input>
+                <Input className="registration-input">
                 <label>Phone Number</label>
                 <input 
                 type="text" 
@@ -99,7 +98,7 @@ class Registration extends React.Component {
                 value={this.state.userphone} required />
                 </Input>
 
-                <Input>
+                <Input className="registration-input">
                 <label>Password</label>
                 <input 
                 type="password" 
@@ -108,19 +107,22 @@ class Registration extends React.Component {
                 value={this.state.password} required />
                 </Input>
 
+
+                <Input className="registration-input">
                 <label>Select an Organization</label>
-                <select
+                <select 
+                    className = "registration-selector"
                     value={this.state.organization}
                     onChange={this.handleChange}
+                    name="organization"
                 >
-                    <option name="organization">Ghana Makes A Difference</option>
-                    <option name="organization">Social Workers of Ghana</option>
-                    <option name="organization">SCEF</option>
+                    <option value="Ghana Makes A Difference">Ghana Makes A Difference</option>                    
+                    <option value="Social Workers of Ghana">Social Workers of Ghana</option>
+                    <option value="SCEF">SCEF</option>
                 </select>
-
+                </Input>
 
             <button className = "registration-btn" type="submit">Submit</button>
-            </FormContainer>
             </form>
         )
     }

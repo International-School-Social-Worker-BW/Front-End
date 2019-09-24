@@ -18,8 +18,8 @@ function App() {
       <Switch>
           <Route exact path='/' component={Home} />
           <Route  path='/about' component={Home} />
-          <Route path='/signin' component={Login} />
-          <Route path='/signup' component={Registration} />
+          <Route path='/signin' component={Login} /> {/* this needs to have a page built to render the Login component */}
+          <Route path='/signup' component={Registration} /> {/* this needs to have a page built to render the Registration component */}
           <PrivateRoute path='/protected' component={UserHomePage} />
           <PrivateRoute path='/role' component={RoleSelect} />
 

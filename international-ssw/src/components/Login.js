@@ -11,6 +11,9 @@ const Input = styled.div `
     flex-direction: column;
 `
 
+
+
+
 const Login = (props) => {
     const [credentials, setCredentials] = useState({
       username: '',
@@ -31,10 +34,9 @@ const Login = (props) => {
       <>
         <form className='login-form' onSubmit={handleSubmit}>
           
-          <Input>
+          <Input className = "login-input">
           <label className = "login-label">Email</label>
           <input
-            className = "login-label"
               type='text'
               name='username'
               onChange={handleChange}
@@ -43,10 +45,9 @@ const Login = (props) => {
           />
           </Input>
 
-          <Input>
+          <Input className = "login-input">
           <label className = "login-label">Password</label>
           <input
-            className = "login-label"
               type='password'
               name='password'
               onChange={handleChange}
