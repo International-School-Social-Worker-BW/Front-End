@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
-
 import Registration from './Registration.js'
 import '../styles/registration-page.scss'
 

@@ -44,6 +44,7 @@ export const studentReducer =(state = initialState, action) => {
                       error: action.payload,
                       fetchingData: false
                   }
+                  
         default:
             return state;
     }

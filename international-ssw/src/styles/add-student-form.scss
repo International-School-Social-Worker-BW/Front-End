@@ -1,0 +1,20 @@
+$primary-color: #384148;
+$blue:  #5DB0C7;
+$white: #fff;
+
+.add-form {
+    width: 80%;
+    padding: 5%;
+    border: 2px solid $primary-color;
+}
+
+.name-section{
+    display: flex;
+    background: green;
+    height:100px; 
+    width: 100%;
+}
+
+.name-section .student-input input {
+    width: 20%;
+}

@@ -1,9 +1,18 @@
-//add student form page Form logic is currently not working.
+//add student form page 
 import React from "react"
 import {connect} from 'react-redux';
-import axios from 'axios';
+import styled from 'styled-components';
 import { addStudent } from '../store/actions';
 import ProtectedNavBar from './ProtectedNavBar.js';
+
+import '../styles/add-student-form.scss'
+
+
+const Input = styled.div `
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+`
 
 class AddStudent extends React.Component {
     
@@ -38,142 +47,175 @@ handleSubmit = e => {
     handleChange = event => {
         event.preventDefault();
         this.setState({[event.target.name]: event.target.value});
-      };
+    };
 
     render() {
         return (
             <section>
                 <ProtectedNavBar />
-            <div>
-                <form onSubmit={this.handleSubmit}>
+                <form className = "add-form" onSubmit={this.handleSubmit}>
+                    <div className = "name-section" >
+                        <Input className = "student-input">
+                            <label>First Name</label>
+                            <input 
+                            type="text" 
+                            name="studentfirstname" 
+                            onChange={this.handleChange} 
+                            value={this.state.studentfirstname} required />
+                        </Input>
 
-                <label>First Name</label>
-                <input 
-                type="text" 
-                name="studentfirstname" 
-                onChange={this.handleChange} 
-                value={this.state.studentfirstname} required />
+                        <Input>
+                            <label>Last Name</label>
+                            <input 
+                            type="text" 
+                            name="studentlastname" 
+                            onChange={this.handleChange} 
+                            value={this.state.studentlastname} required />
+                        </Input>
+                    </div>
 
-                <label>Last Name</label>
-                <input 
-                type="text" 
-                name="studentlastname" 
-                onChange={this.handleChange} 
-                value={this.state.studentlastname} required />
+                    <div className = "age-grade">
+                        <Input>
+                            <label>Age</label>
+                            <input 
+                            type="text" 
+                            name="age" 
+                            onChange={this.handleChange} 
+                            value={this.state.age} required />
+                        </Input>
 
-                <label>Age</label>
-                <input 
-                type="text" 
-                name="age" 
-                onChange={this.handleChange} 
-                value={this.state.age} required />
+                        <Input>
+                            <label>Grade</label>
+                            <input 
+                            type="text" 
+                            name="grade" 
+                            onChange={this.handleChange} 
+                            value={this.state.grade} required />
+                        </Input>
+                    </div>
 
-                <label>Grade</label>
-                <input 
-                type="text" 
-                name="grade" 
-                onChange={this.handleChange} 
-                value={this.state.grade} required />
+                    <div className = "student-statuses">
+                        <Input>
+                            <label>Student Status:</label>
+                            <select
+                                value={this.state.status}
+                                onChange={this.handleChange}
+                                name="status"
+                                required                
+                            >
+                                <option value="Current Student">Current Student</option>                    
+                                <option value="Past Student">Past Student</option>
+                                <option value="Visiting">Visiting</option>
+                            </select>
+                        </Input>
 
-                <label>Student Status:</label>
-                <select
-                    value={this.state.status}
-                    onChange={this.handleChange}
-                    name="status"
-                    required                
-                >
-                    <option value="Current Student">Current Student</option>                    
-                    <option value="Past Student">Past Student</option>
-                    <option value="Visiting">Visiting</option>
-                </select>
+                        <Input>
+                            <label>Birth Certificate?</label>
+                            <select
+                                value={this.state.birthcertificate}
+                                onChange={this.handleChange}
+                                name="birthcertificate" 
+                                required               
+                            >
+                                <option value="true">Yes</option>                    
+                                <option value="false">No</option>
+                            </select>
+                        </Input>
 
-                <label>Birth Certificate?</label>
-                <select
-                    value={this.state.birthcertificate}
-                    onChange={this.handleChange}
-                    name="birthcertificate" 
-                    required               
-                >
-                    <option value="true">Yes</option>                    
-                    <option value="false">No</option>
-                </select>
+                        <Input>
+                            <label>Insurance?</label>
+                            <select
+                                value={this.state.insurance}
+                                onChange={this.handleChange}
+                                name="insurance" 
+                                required               
+                            >
+                                <option value="true">Yes</option>                    
+                                <option value="false">No</option>
+                            </select>
+                        </Input>
 
-                <label>Insurance?</label>
-                <select
-                    value={this.state.insurance}
-                    onChange={this.handleChange}
-                    name="insurance" 
-                    required               
-                >
-                    <option value="true">Yes</option>                    
-                    <option value="false">No</option>
-                </select>
+                        <Input>
+                            <label>Do they have any physical, intellectual, emotional, behavioral or learning disabilities?</label>
+                            <select
+                                value={this.state.specialneeds}
+                                onChange={this.handleChange}
+                                name="specialneeds"
+                                required                
+                            >
+                                <option value="true">Yes</option>                    
+                                <option value="false">No</option>
+                            </select>
+                        </Input>
+                    </div>
 
-                <label>Special needs?</label>
-                <select
-                    value={this.state.specialneeds}
-                    onChange={this.handleChange}
-                    name="specialneeds"
-                    required                
-                >
-                    <option value="true">Yes</option>                    
-                    <option value="false">No</option>
-                </select>
+                    <div className="contactName-phone">
+                        <Input>
+                            <label>Contact Name:</label>
+                            <input 
+                            type="text" 
+                            name="contactname" 
+                            onChange={this.handleChange} 
+                            value={this.state.contactname} required />
+                        </Input>
 
-                <label>Contact Name:</label>
-                <input 
-                type="text" 
-                name="contactname" 
-                onChange={this.handleChange} 
-                value={this.state.contactname} required />
+                        <Input>
+                            <label>Contact Phone:</label>
+                            <input 
+                            type="text" 
+                            name="contactphone" 
+                            onChange={this.handleChange} 
+                            value={this.state.contactphone} required />
+                        </Input>
+                    </div>
 
-                <label>Contact Phone:</label>
-                <input 
-                type="text" 
-                name="contactphone" 
-                onChange={this.handleChange} 
-                value={this.state.contactphone} required />
+                    <div className = "email-relationship">
+                        <Input>
+                            <label>Contact Email:</label>
+                            <input 
+                            type="email" 
+                            name="contactemail" 
+                            onChange={this.handleChange} 
+                            value={this.state.contactemail} required />
+                        </Input>
 
-                <label>Contact Email:</label>
-                <input 
-                type="email" 
-                name="contactemail" 
-                onChange={this.handleChange} 
-                value={this.state.contactemail} required />
+                        <Input>
+                            <label>Relationship:</label>
+                            <select
+                                value={this.state.relationship}
+                                onChange={this.handleChange}
+                                name="relationship" 
+                                required               
+                            >
+                                <option value="mother">Mother</option>                    
+                                <option value="father">Father</option>
+                                <option value="guardian">Guardian</option>
+                                <option value="grandparent">Gradparent</option>
+                                <option value="other relation">Other Relation</option>
+                            </select>
+                        </Input>
+                    </div>
 
-                <label>Relationship:</label>
-                <select
-                    value={this.state.relationship}
-                    onChange={this.handleChange}
-                    name="relationship" 
-                    required               
-                >
-                    <option value="mother">Mother</option>                    
-                    <option value="father">Father</option>
-                    <option value="guardian">Guardian</option>
-                    <option value="grandparent">Gradparent</option>
-                    <option value="other relation">Other Relation</option>
+                    <Input>
+                        <label>Social History/Background:</label>
+                        <input 
+                        type="text" 
+                        name="backgroundinfo" 
+                        onChange={this.handleChange} 
+                        value={this.state.backgroundinfo} required />
+                    </Input>
 
-                </select>
+                    <Input>
+                        <label>Critical Info:</label>
+                        <input 
+                        type="text" 
+                        name="criticalinfo" 
+                        onChange={this.handleChange} 
+                        value={this.state.criticalinfo} required />
+                    </Input>
 
-                <label>Background Info:</label>
-                <input 
-                type="text" 
-                name="backgroundinfo" 
-                onChange={this.handleChange} 
-                value={this.state.backgroundinfo} required />
-
-                <label>Critical Info:</label>
-                <input 
-                type="text" 
-                name="criticalinfo" 
-                onChange={this.handleChange} 
-                value={this.state.criticalinfo} required />
-
-                <button type="submit">Submit</button>
-
+                    <button className = "add-btn" type="submit">Submit</button>
                 </form>
-            </div>
             </section>
         )
     }
