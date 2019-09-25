@@ -51,7 +51,7 @@ class Registration extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.addUser(this.state, this.props);
-        this.props.props.history.push('/protected');
+        this.props.props.history.push('/role');
     }
 
     

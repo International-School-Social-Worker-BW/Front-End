@@ -15,7 +15,7 @@ export const StudentsTable = (props) => {
         <Header />
         <tbody>
           {props.student.map(student => (
-            <NavLink to={`/student/${student.studentid}` }>
+            <NavLink to={`/student/${student.studentid}`} style={{ textDecoration: 'none' }}>
             <RowData key={student.studentid} student={student}/></NavLink>
           ))}
         </tbody>

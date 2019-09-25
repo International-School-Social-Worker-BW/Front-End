@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
-import { addRole } from '../store/actions';
+import { addRole, fetchUser } from '../store/actions';
 
 
 const RoleSelect = props => {
     const [userrole, setUserrole] = useState({
             userrole: ''
     });
+
+    // useEffect(() => {
+        
+        
+
+    //     axiosWithAuth()
+    //         .get(`/users/getcurrentuser`)
+    //         .then(res => setUserrole(res.data))
+    //         .catch(err => console.log(err)); 
+    // }, []);
+    
 
     const handleChange = event => {
         event.preventDefault();
@@ -27,8 +38,8 @@ const RoleSelect = props => {
                 value= {userrole.userrole}
                 onChange={handleChange}
                 >
-                <option value="admin">School Admin</option>
-                <option value="user">Social Worker</option>
+                <option value="1">School Admin</option>
+                <option value="2">Social Worker</option>
             </select>
             <button type="submit">Submit</button>
             </form>

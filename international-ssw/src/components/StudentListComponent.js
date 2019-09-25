@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
-import StudentListPage from './StudentListPage';
+import EditStudent from './EditStudent.js';
 
 const StudentListComponent = props => {
-    const [studentList, setStudentList] = useState({});
+    const [student, setStudent] = useState({});
     useEffect(() => {
-        const student = props.match.params.student;
+        const id = props.match.params.id;
         
 
         axiosWithAuth()
-            .get(`/students/students`)
-            .then(res => setStudentList(res.data))
+            .get(`/students/student/${id}`)
+            .then(res => setStudent(res.data))
             .catch(err => console.log(err));
-    }, [props.match.params.student]);
-    console.log(props.match.params.student);
+    }, [props.match.params.id]);
+    console.log(props.match.params.id);
     return(
         <div>
-            <StudentListPage studentList={studentList} />
+            <EditStudent student={student} />
         </div>
     )
 }

@@ -2,7 +2,7 @@
 //have an add student button, and also have a nav bar
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { fetchStudents } from '../store/actions';
 import { connect } from 'react-redux';
 import { StudentsTable } from './StudentsTable/StudentsTable';
@@ -41,4 +41,4 @@ const mapStateToProps = state =>   ({
     fetching: state.studentReducer.fetching,
     error: state.studentReducer.error
    })
-export default connect(mapStateToProps, { fetchStudents }) (UserHomePage);
+export default withRouter(connect(mapStateToProps, { fetchStudents }) (UserHomePage));
