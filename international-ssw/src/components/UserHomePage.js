@@ -30,6 +30,7 @@ class UserHomePage extends React.Component {
             <div className="students-list">
                 <StudentsTable student={this.props.data} />
             </div>
+            <Pagination />
             </div>
         </section>
     )}
