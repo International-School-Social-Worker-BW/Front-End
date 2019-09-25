@@ -2,8 +2,8 @@ import React from 'react';
 import { Header } from './Header';
 import { RowData } from './RowData';
 
-// Some dummy data
-import data from '../../utils/dummyData';
+// // Some dummy data
+// import data from '../../utils/dummyData';
 
 export const StudentsTable = (props) => {
   
@@ -13,7 +13,7 @@ export const StudentsTable = (props) => {
         <caption className="text-center"></caption>
         <Header />
         <tbody>
-          {data.map(student => (
+          {props.student.map(student => (
             <RowData student={student}/>
           ))}
         </tbody>
