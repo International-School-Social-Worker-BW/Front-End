@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from './Header';
 import { RowData } from './RowData';
+import { Link, Route } from 'react-router-dom';
 
 // // Some dummy data
 // import data from '../../utils/dummyData';
@@ -14,7 +15,8 @@ export const StudentsTable = (props) => {
         <Header />
         <tbody>
           {props.student.map(student => (
-            <RowData key={student.studentid}student={student}/>
+            <Link to={`/student/${student.studentid}`}>
+            <RowData key={student.studentid} student={student}/></Link>
           ))}
         </tbody>
         <tfoot>

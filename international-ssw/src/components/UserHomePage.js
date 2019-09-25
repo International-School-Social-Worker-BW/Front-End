@@ -2,7 +2,7 @@
 //have an add student button, and also have a nav bar
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
-import { NavLink } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { fetchStudents } from '../store/actions';
 import { connect } from 'react-redux';
 import { StudentsTable } from './StudentsTable/StudentsTable';
@@ -25,10 +25,10 @@ class UserHomePage extends React.Component {
             <div className="container home-page-content">
             <h1>Ghana Makes A Difference</h1>
             
-            <NavLink to='/add'><button>Add Student</button></NavLink>
+            <Link to='/add'><button>Add Student</button></Link>
             
             <div className="students-list">
-                <StudentsTable student={this.props.data} />
+                {/* <StudentsTable student={this.props.data} /> */}
             </div>
             <Pagination />
             </div>

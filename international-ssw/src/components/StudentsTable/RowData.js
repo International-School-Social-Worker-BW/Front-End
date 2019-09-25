@@ -1,7 +1,8 @@
 import React from 'react';
 
+
 export const RowData = (props) => {
-  const { age, grade, studentfirstname, studentlastname } = props.student;
+  const { age, grade, studentfirstname, studentlastname, studentid } = props.student;
   return (
     <tr>
       <td>{ studentfirstname } { studentlastname }</td>

@@ -53,7 +53,9 @@ handleSubmit = e => {
         return (
             <section>
                 <ProtectedNavBar />
+                <div className = "form-container">
                 <form className = "add-form" onSubmit={this.handleSubmit}>
+
                     <div className = "name-section" >
                         <Input className = "student-input">
                             <label>First Name</label>
@@ -64,7 +66,7 @@ handleSubmit = e => {
                             value={this.state.studentfirstname} required />
                         </Input>
 
-                        <Input>
+                        <Input className = "student-input">
                             <label>Last Name</label>
                             <input 
                             type="text" 
@@ -75,7 +77,7 @@ handleSubmit = e => {
                     </div>
 
                     <div className = "age-grade">
-                        <Input>
+                        <Input className = "student-input">
                             <label>Age</label>
                             <input 
                             type="text" 
@@ -84,7 +86,7 @@ handleSubmit = e => {
                             value={this.state.age} required />
                         </Input>
 
-                        <Input>
+                        <Input className = "student-input">
                             <label>Grade</label>
                             <input 
                             type="text" 
@@ -95,7 +97,7 @@ handleSubmit = e => {
                     </div>
 
                     <div className = "student-statuses">
-                        <Input>
+                        <Input className = "student-input">
                             <label>Student Status:</label>
                             <select
                                 value={this.state.status}
@@ -103,13 +105,14 @@ handleSubmit = e => {
                                 name="status"
                                 required                
                             >
+                                <option>Select Status</option>
                                 <option value="Current Student">Current Student</option>                    
                                 <option value="Past Student">Past Student</option>
                                 <option value="Visiting">Visiting</option>
                             </select>
-                        </Input>
+                        </Input >
 
-                        <Input>
+                        <Input className = "student-input">
                             <label>Birth Certificate?</label>
                             <select
                                 value={this.state.birthcertificate}
@@ -122,7 +125,7 @@ handleSubmit = e => {
                             </select>
                         </Input>
 
-                        <Input>
+                        <Input className = "student-input">
                             <label>Insurance?</label>
                             <select
                                 value={this.state.insurance}
@@ -134,8 +137,10 @@ handleSubmit = e => {
                                 <option value="false">No</option>
                             </select>
                         </Input>
+                        </div>
 
-                        <Input>
+                        <div className = "disabilities">
+                        <Input className = "student-input">
                             <label>Do they have any physical, intellectual, emotional, behavioral or learning disabilities?</label>
                             <select
                                 value={this.state.specialneeds}
@@ -148,9 +153,10 @@ handleSubmit = e => {
                             </select>
                         </Input>
                     </div>
+                    
 
                     <div className="contactName-phone">
-                        <Input>
+                        <Input className = "student-input">
                             <label>Contact Name:</label>
                             <input 
                             type="text" 
@@ -159,7 +165,7 @@ handleSubmit = e => {
                             value={this.state.contactname} required />
                         </Input>
 
-                        <Input>
+                        <Input className = "student-input">
                             <label>Contact Phone:</label>
                             <input 
                             type="text" 
@@ -170,7 +176,7 @@ handleSubmit = e => {
                     </div>
 
                     <div className = "email-relationship">
-                        <Input>
+                        <Input className = "student-input">
                             <label>Contact Email:</label>
                             <input 
                             type="email" 
@@ -179,7 +185,7 @@ handleSubmit = e => {
                             value={this.state.contactemail} required />
                         </Input>
 
-                        <Input>
+                        <Input className = "student-input">
                             <label>Relationship:</label>
                             <select
                                 value={this.state.relationship}
@@ -196,26 +202,32 @@ handleSubmit = e => {
                         </Input>
                     </div>
 
-                    <Input>
-                        <label>Social History/Background:</label>
-                        <input 
-                        type="text" 
-                        name="backgroundinfo" 
-                        onChange={this.handleChange} 
-                        value={this.state.backgroundinfo} required />
-                    </Input>
+                    <div className = "history-info">
+                        <Input className = "student-input">
+                            <label>Social History/Background:</label>
+                            <textarea 
+                            type="text" 
+                            name="backgroundinfo" 
+                            onChange={this.handleChange} 
+                            value={this.state.backgroundinfo} required />
+                        </Input>
+                    </div>
 
-                    <Input>
-                        <label>Critical Info:</label>
-                        <input 
-                        type="text" 
-                        name="criticalinfo" 
-                        onChange={this.handleChange} 
-                        value={this.state.criticalinfo} required />
-                    </Input>
-
-                    <button className = "add-btn" type="submit">Submit</button>
+                    <div className = "critical-info">
+                        <Input className = "student-input">
+                            <label>Critical Info:</label>
+                            <textarea 
+                            type="text" 
+                            name="criticalinfo" 
+                            onChange={this.handleChange} 
+                            value={this.state.criticalinfo} required />
+                        </Input>
+                    </div>
+                    <div className="submit-btn">
+                        <button className = "add-btn" type="submit">Submit</button>
+                    </div>
                 </form>
+                </div>
             </section>
         )
     }
