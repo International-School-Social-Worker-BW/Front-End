@@ -28,12 +28,7 @@ const StudentPage = (props) => {
         <h2>{props.student.insurance}</h2>
         <p></p>
       </div>
-
-      <div className="contact-info">
-        <h2>{props.student.contactname}</h2>
-        <h2>{props.student.relatioinship}</h2>
-        <h2>{props.student.contactnumber}</h2>
-      </div>
+      
     )
   }
 //   const mapStateToProps = state =>   ({

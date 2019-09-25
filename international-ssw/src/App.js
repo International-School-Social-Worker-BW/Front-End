@@ -20,11 +20,11 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route  path='/about' component={Home} />
           <Route path='/add' component={AddStudent} />
-          <Route path='/students/:id' component={({match})=>(<StudentComponent/>)} />
+          <Route path='/student/:id' component={({match})=>(<StudentComponent match={match}/>)} />
           <Route path='/signin' component={LoginPage} /> 
           <Route path='/signup' component={RegistrationPage} /> 
           <PrivateRoute path='/protected' component={UserHomePage} />
-          {/* <PrivateRoute path='/protected' component={({match})=>(<StudentListComponent/>)} /> */}
+          {/* <PrivateRoute path='/protected' component={({match})=>(<StudentListComponent match={match}/>)} /> */}
           <PrivateRoute path='/role' component={RoleSelect} />
 
       </Switch>
