@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
 import styled from "styled-components";
-
 import { login } from '../store/actions';
 
 const Input = styled.div `

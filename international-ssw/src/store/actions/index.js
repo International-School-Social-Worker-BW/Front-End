@@ -94,9 +94,10 @@ export const STUDENT_SUCCESS = "STUDENT_SUCCESS";
 export const STUDENT_FAILURE = "STUDENT_FAILURE";
 
 export const addStudent = (index, props) => dispatch => {
+  console.log('Addstudent')
     dispatch({type: ADD_STUDENT})
-    axios
-        .post(`https://jondscott21-internationschool.herokuapp.com/students/new`, index)
+    axiosWithAuth()
+        .post(`/students/new`, index)
         .then(res => {
             console.log(res.data)
             dispatch({ type: STUDENT_SUCCESS, payload: res.data });
@@ -107,5 +108,26 @@ export const addStudent = (index, props) => dispatch => {
             dispatch({ type: STUDENT_FAILURE, payload: err.response });
           });
 };
+
+export const FETCH_USER = "FETCH_USER";
+export const USER_SUCCESS = "USER_SUCCESS";
+export const USER_FAILURE = "USER_FAILURE";
+
+export const fetchUser = index => dispatch => {
+  console.log("USER");
+  dispatch({ type: FETCH_USER});
+  axiosWithAuth()
+    .get(`/users/getcurrentuser`)
+    .then(res => {
+      console.log('fetched User', res)
+      dispatch({type:USER_SUCCESS, payload:res.data})
+      return true;
+    })
+    .catch(err => {
+      console.log("fetchUser", err.response);
+      dispatch({type: USER_FAILURE, payload: err.response})
+    });
+};
+
 
 

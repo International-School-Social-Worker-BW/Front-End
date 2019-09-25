@@ -14,7 +14,7 @@ export const StudentsTable = (props) => {
         <Header />
         <tbody>
           {props.student.map(student => (
-            <RowData student={student}/>
+            <RowData key={student.studentid}student={student}/>
           ))}
         </tbody>
         <tfoot>

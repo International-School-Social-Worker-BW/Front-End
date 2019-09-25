@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-
-import Login from './Login.js'
-import Registration from './Registration.js'
-
+import Registration from './Registration.js';
 import { NavBar } from './NavBar';
-
 import '../styles/sign-up.scss'
 import '../styles/variables.scss'
 
