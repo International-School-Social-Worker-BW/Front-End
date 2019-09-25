@@ -3,7 +3,7 @@
 .registration-page .registration-form .registration-btn {
     background:#5DB0C7;
     color: white;
-    width: 500px;
+
     margin-top:15px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
 
@@ -51,6 +51,7 @@
     margin:0;
     padding:0;
     border:none;
+    padding: 2.5%;
 }
 
 .registration-page .registration-input {
@@ -78,7 +79,7 @@
 .registration-page .already-have-account {
     border: 3px solid white;
     border-radius: 5px;
-    width: 70%;
+    width: 60%;
     font-size:2rem;
     color: white;
     margin-top: 30px;
