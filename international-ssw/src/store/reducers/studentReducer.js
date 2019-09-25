@@ -10,8 +10,7 @@ import {
 export const initialState = {
     data: [],
     error:'',
-    fetchingData:false,
-    deletingItem: false    
+    fetchingData:false    
 }
 
 export const studentReducer =(state = initialState, action) => {

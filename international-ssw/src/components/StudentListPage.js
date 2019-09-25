@@ -1,5 +1,4 @@
-//Protected page This is a dummy protected page for now that will render a list of student, 
-//have an add student button, and also have a nav bar
+//Protected page 
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -9,16 +8,9 @@ import { StudentsTable } from './StudentsTable/StudentsTable';
 import Pagination from './Pagination.js';
 
 
-class UserHomePage extends React.Component {  
+const StudentListPage = (props) => { 
+    console.log('studentLISTpropsmadeit', props); 
     
-    componentDidMount(){
-        this.props.fetchStudents();
-        console.log("wegothere");
-    }
-   render() 
-   
-   
-   { console.log("userpage", this.props.data); 
    return (
         <section className="home-page">
             
@@ -34,11 +26,14 @@ class UserHomePage extends React.Component {
             <Pagination />
             </div>
         </section>
-    )}
+    )
 }
-const mapStateToProps = state =>   ({
-    data: state.studentReducer.data,
-    fetching: state.studentReducer.fetching,
-    error: state.studentReducer.error
-   })
-export default connect(mapStateToProps, { fetchStudents }) (UserHomePage);
+
+
+export default StudentListPage;
+// const mapStateToProps = state =>   ({
+//     data: state.studentReducer.data,
+//     fetching: state.studentReducer.fetching,
+//     error: state.studentReducer.error
+//    })
+// export default connect(mapStateToProps, { fetchStudents }) (UserHomePage);

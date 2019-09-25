@@ -8,27 +8,23 @@ import AddStudent from './components/AddStudent.js';
 import RoleSelect from './components/RoleSelect.js';
 import LoginPage from './components/LoginPage.js';
 import RegistrationPage from './components/RegistrationPage.js';
-import StudentPage from './components/StudentPage.js';
-import { fetchStudents } from './store/actions';
+import StudentComponent from './components/StudentComponent.js';
+import StudentListComponent from './components/StudentListComponent.js';
 
 
 function App() {
-  const [students, setStudents] = useState([]);
-
-  // useEffect(() => {
-  //   fetchStudents()
-        
-  // })
+  
   return (
     <div className="App">
       <Switch>
           <Route exact path='/' component={Home} />
           <Route  path='/about' component={Home} />
           <Route path='/add' component={AddStudent} />
-          <Route path='/students/:id' render={props => <StudentPage {...props} students={students}/>} />
-          <Route path='/signin' component={LoginPage} /> {/* this needs to have a page built to render the Login component */}
-          <Route path='/signup' component={RegistrationPage} /> {/* this needs to have a page built to render the Registration component */}
+          <Route path='/students/:id' component={({match})=>(<StudentComponent/>)} />
+          <Route path='/signin' component={LoginPage} /> 
+          <Route path='/signup' component={RegistrationPage} /> 
           <PrivateRoute path='/protected' component={UserHomePage} />
+          {/* <PrivateRoute path='/protected' component={({match})=>(<StudentListComponent/>)} /> */}
           <PrivateRoute path='/role' component={RoleSelect} />
 
       </Switch>
