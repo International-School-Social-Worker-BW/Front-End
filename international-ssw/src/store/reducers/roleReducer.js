@@ -11,10 +11,12 @@ import {
     error: '',
     fetchingData: false,
     userrole: [],
-    addRole: []
+    addRole: [],
+    user: {}
   };
   
 export const roleReducer = (state = initialState, action) => {
+  
     switch (action.type) {
       case ADD_ROLE:
         return {
@@ -37,9 +39,11 @@ export const roleReducer = (state = initialState, action) => {
               fetchingData: false
           }
           case FETCH_USER:
+             
             return{...state, fetchingData:true};
         case USER_SUCCESS:
-            return{...state, data:action.payload, fetchingData:false};
+            console.log("rolereducer", action.payload);
+            return{...state, user:action.payload, fetchingData:false};
         case USER_FAILURE:
             return{...state, error:action.payload, fetchingData:false};
       default:

@@ -48,10 +48,20 @@ $white: #fff;
     padding-right: 5%;
     height:100px; 
     width: 100%;
+
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 150px;
+    }
 }
 
 .name-section .student-input{
     width: 45%;
+
+    @media(max-width: 500px){
+        width: 100%;
+        margin-bottom: 20px;
+    }
     // margin-right: 5%;
     // margin-left: 2%;
 }
@@ -67,8 +77,22 @@ $white: #fff;
     padding-left: 5%;
     padding-right: 5%;
     height:100px; 
-    width: 40%;
+    width: 70%;
+
+    @media(max-width: 1024px){
+        width:80%;
+    }
+
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 150px;
+        width: 100%;
+        // margin-top: 20px;
+    }
 }
+
+
+
 
 //-------------------STUDENT STATUSES SECTION--------------------
 .student-statuses{
@@ -78,14 +102,23 @@ $white: #fff;
     padding-left: 5%;
     padding-right: 5%;
     height:100px; 
-    width: 70%;
+    width: 100%;
+
+    @media(max-width: 1024px){
+        width:80%;
+        flex-direction: column;
+        height:300px;
+    }
+
+
 }
+
+
 
 .student-statuses select {
     height: 35px;
     color: $primary-color;
     font-size:1.8rem;
-
 }
 
 //-------------------Disabilities SECTION--------------------
@@ -97,6 +130,16 @@ $white: #fff;
     padding-right: 5%;
     height:100px; 
     width: 60%;
+
+    @media(max-width: 1024px){
+        height: 100px;
+        width: 100%;
+    }
+
+    @media(max-width: 500px){
+        height: 200px;
+        margin-bottom: 20px;
+    }
 }
 
 .disabilities select {
@@ -115,10 +158,17 @@ $white: #fff;
     padding-right: 5%;
     height:100px; 
     width: 100%;
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 180px;
+    }
 }
 
 .contactName-phone .student-input{
     width: 45%;
+    @media(max-width: 500px){
+        width: 100%;
+    }
 }
 
 //-------------------EMAIL AND RELATIOINSHIP SECTION--------------------
@@ -130,10 +180,17 @@ $white: #fff;
     padding-right: 5%;
     height:100px; 
     width: 100%;
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 180px;
+    }
 }
 
 .email-relationship .student-input{
     width: 45%;
+    @media(max-width: 500px){
+        width: 100%;
+    }
 }
 
 .email-relationship select{
@@ -157,9 +214,10 @@ $white: #fff;
     padding: 2%;
 }
 
+
 //-------------------CRITICAL INFORMATION SECTION--------------------
 .critical-info{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding-left: 5%;
     padding-right: 5%;
     width: 100%;

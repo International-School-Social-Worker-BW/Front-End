@@ -25,7 +25,7 @@ class AddStudent extends React.Component {
     age: null,
     grade: null,
     status: "",
-    birthcertificate: true,
+    birthcertificate: false,
     insurance: true,
     specialneeds: false,
     contactname: "",
@@ -113,28 +113,30 @@ handleSubmit = e => {
                         </Input >
 
                         <Input className = "student-input">
-                            <label>Birth Certificate?</label>
+                            <label>Do they have a Birth Certificate?</label>
                             <select
                                 value={this.state.birthcertificate}
                                 onChange={this.handleChange}
                                 name="birthcertificate" 
                                 required               
-                            >
-                                <option value="true">Yes</option>                    
-                                <option value="false">No</option>
+                            >   
+                                <option>Select an Option</option>
+                                <option value={true}>Yes</option>                    
+                                <option value={false}>No</option>
                             </select>
                         </Input>
 
                         <Input className = "student-input">
-                            <label>Insurance?</label>
+                            <label>Do they have Insurance?</label>
                             <select
                                 value={this.state.insurance}
                                 onChange={this.handleChange}
                                 name="insurance" 
                                 required               
                             >
-                                <option value="true">Yes</option>                    
-                                <option value="false">No</option>
+                                <option>Select an Option</option>
+                                <option value={true}>Yes</option>                    
+                                <option value={false}>No</option>
                             </select>
                         </Input>
                         </div>
@@ -148,8 +150,9 @@ handleSubmit = e => {
                                 name="specialneeds"
                                 required                
                             >
-                                <option value="true">Yes</option>                    
-                                <option value="false">No</option>
+                                <option>Select an Option</option>
+                                <option value={true}>Yes</option>                    
+                                <option value={false}>No</option>
                             </select>
                         </Input>
                     </div>
@@ -193,6 +196,7 @@ handleSubmit = e => {
                                 name="relationship" 
                                 required               
                             >
+                                <option>Select an Option</option>
                                 <option value="mother">Mother</option>                    
                                 <option value="father">Father</option>
                                 <option value="guardian">Guardian</option>

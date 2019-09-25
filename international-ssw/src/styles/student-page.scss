@@ -17,6 +17,10 @@ $red: #BA4F34;
 
 }
 
+input{
+    font-size:1.8rem;
+}
+
 .info-container{
     display: flex;
     justify-content: center;
@@ -87,7 +91,18 @@ button {
     justify-content: space-between;
     width: 100%;
     margin-bottom:30px;
-    
+
+    @media (max-width: 500px){
+        flex-wrap: wrap;
+        margin-bottom:0;
+    }
+}
+
+.student-info h2{
+    @media (max-width: 500px){
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
 }
 
 
@@ -98,7 +113,20 @@ button {
     margin-bottom: 30px;
     width: 55%;
     // background: coral;
+
+    @media (max-width: 500px){
+        flex-direction: column;
+        margin-right: 20px;
+    }
 }
+
+.contact-info h2 {
+    @media (max-width: 500px){
+        margin-bottom: 30px;
+    }
+}
+
+//----------------contact-2-----------------
 
 .contact-info-2 {
     display: flex;
@@ -106,6 +134,16 @@ button {
     margin-bottom:30px;
     width: 71%;
     // background: coral;
+
+    @media (max-width: 500px){
+        flex-direction: column;
+    }
+}
+
+.contact-info-2 h2 {
+    @media (max-width: 500px){
+        margin-bottom: 30px;
+    }
 }
 
 //----------------contact-----------------
@@ -131,9 +169,10 @@ button {
 
 
 //----------------critical info-----------------
-.critical-info{
+.info .critical-info{
     margin-bottom: 30px;
-    padding: 0;
+    padding-left: 0;
+    padding-right:0;
 }
 
 .critical-info h1{

@@ -3,7 +3,7 @@
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
 import { Link, withRouter } from 'react-router-dom';
-import { fetchStudents } from '../store/actions';
+import { fetchStudents, fetchUser } from '../store/actions';
 import { connect } from 'react-redux';
 import { StudentsTable } from './StudentsTable/StudentsTable';
 import Pagination from './Pagination.js';
@@ -13,9 +13,12 @@ class UserHomePage extends React.Component {
     
     componentDidMount(){
         this.props.fetchStudents();
+        // this.props.fetchUser();
         console.log("wegothere");
     }
    render() 
+
+
    
    
    { console.log("userpage", this.props.data); 
