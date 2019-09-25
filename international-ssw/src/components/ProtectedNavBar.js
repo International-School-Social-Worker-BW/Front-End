@@ -13,7 +13,7 @@ const ProtectedNavBar = () => {
         <nav>
           <ul className='main-menu'>
             <li>
-              <Link to="/">
+              <Link to="/protected">
                 <MdHome className="home-icon"/>
               </Link>
             </li>
