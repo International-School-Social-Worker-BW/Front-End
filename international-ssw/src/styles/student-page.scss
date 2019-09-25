@@ -1,0 +1,26 @@
+$primary-color: #384148;
+$blue:  #5DB0C7;
+$white: #fff;
+
+%section-formatting {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:100px; 
+    width: 60%;
+}
+
+@mixin style(){
+
+}
+
+.info-container{
+    display: flex;
+    background: blue;
+}
+
+.student-info-1{
+    background: red;
+}
