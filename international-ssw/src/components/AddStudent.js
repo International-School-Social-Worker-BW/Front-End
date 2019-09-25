@@ -1,8 +1,9 @@
-//add student form page
+//add student form page Form logic is currently not working.
 import React from "react"
 import {connect} from 'react-redux';
 import axios from 'axios';
 import { addStudent } from '../store/actions';
+import ProtectedNavBar from './ProtectedNavBar.js';
 
 class AddStudent extends React.Component {
     
@@ -41,6 +42,8 @@ handleSubmit = e => {
 
     render() {
         return (
+            <section>
+                <ProtectedNavBar />
             <div>
                 <form onSubmit={this.handleSubmit}>
                 <label>First Name</label>
@@ -144,6 +147,7 @@ handleSubmit = e => {
 
                 </form>
             </div>
+            </section>
         )
     }
 }
