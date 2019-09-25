@@ -58,7 +58,7 @@ export const ROLE_FAILURE = "ROLE_FAILURE";
 
 export const addRole = (index, props) => dispatch => {
   dispatch({type: ADD_ROLE})
-  axiosWithAuth().post(`https://jondscott21-internationschool.herokuapp.com/users/user/${props.userid}/role/{roleid}`, index)
+  axiosWithAuth().post(`/users/user/${props.userid}/role/{roleid}`, index)
       .then(res => {
           console.log(res.data)
           dispatch({ type: ROLE_SUCCESS, payload: res.data });
@@ -78,7 +78,7 @@ export const fetchStudents = index =>dispatch => {
   console.log("inaction");
   dispatch({ type: FETCH_START});
   axiosWithAuth()
-    .get(`https://jondscott21-internationschool.herokuapp.com/students/students`)
+    .get(`/students/students`)
     .then(res => {
       console.log('fetched items', res)
       dispatch({type:FETCH_SUCCESS, payload:res.data})

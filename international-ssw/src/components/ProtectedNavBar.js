@@ -7,7 +7,7 @@ const ProtectedNavBar = () => {
     <header className='top-header protected-nav'>
       <div className="container header-nav protected-nav">
         <div className="logo">
-          <Link to="/">Educell</Link>
+          <Link to="/protected">Educell</Link>
         </div>
 
         <nav>
