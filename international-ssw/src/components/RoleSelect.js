@@ -1,22 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
-import { addRole } from '../store/actions';
+import { addRole, fetchUser } from '../store/actions';
+import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 
 
 const RoleSelect = props => {
     const [userrole, setUserrole] = useState({
-            userrole: ''
+        user: {},
+        roleid: null
     });
+console.log('roleprops', props);
+    useEffect(() => {
+        
+        
+
+        axiosWithAuth()
+            .get(`/users/getcurrentuser`)
+            .then(res => {setUserrole({...userrole, user: res.data})
+            console.log('useeeffect', res.data)})
+            .catch(err => console.log(err)); 
+    }, []);
+    
 
     const handleChange = event => {
+        
         event.preventDefault();
-        setUserrole({...userrole, [event.target.name]: event.target.value });
+
+        setUserrole({...userrole, [event.target.name]: event.target.value});
+        console.log('roldpae', userrole);
+
       };
     
       const handleSubmit = event => {
         event.preventDefault();
         props.addRole(userrole, props);
         console.log('madeit', userrole);
+        props.history.push('/protected');
       }
 
     return (
@@ -24,11 +43,12 @@ const RoleSelect = props => {
             <h2>Select your role:</h2>
             <form onSubmit={handleSubmit}>
             <select
-                value= {userrole.userrole}
                 onChange={handleChange}
+                name="roleid"
                 >
-                <option value="admin">School Admin</option>
-                <option value="user">Social Worker</option>
+                <option disabled selected value>--</option>
+                <option value={1}>School Admin</option>
+                <option value={2}>Social Worker</option>
             </select>
             <button type="submit">Submit</button>
             </form>
@@ -36,7 +56,7 @@ const RoleSelect = props => {
     )
 }
 const mapStateToProps = state => {
-    return {error: state.error}
+    return {state: state}
 }
 
 export default connect(mapStateToProps, { addRole })(RoleSelect);

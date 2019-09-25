@@ -1,7 +1,7 @@
-
+import {NavLink} from 'react-router-dom';
 
 import React, { useEffect, useState } from 'react';
-import axiosWitAuth from '../../utils/axiosWithAuth'
+import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 import ProtectedNavBar from './ProtectedNavBar.js';
 
 export default function EditStudent (props) {
@@ -34,7 +34,7 @@ export default function EditStudent (props) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        axiosWitAuth()
+        axiosWithAuth()
         .put(`/students/student/${props.match.params.studentid}`, editStudent)
         .then(res => {
             setEditStudent(editingState)

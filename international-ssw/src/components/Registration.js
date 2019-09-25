@@ -40,7 +40,6 @@ class Registration extends React.Component {
         }
     };
 
-
     handleChange = e => {
         this.setState({
         ...this.state,
@@ -50,11 +49,10 @@ class Registration extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
+        console.log('reg pageprops', this.props)
         this.props.addUser(this.state, this.props);
-        this.props.props.history.push('/protected');
-    }
-
-    
+        this.props.props.history.push('/role');
+    };    
 
     render(){
         console.log("reg page", this.props);

@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import { Link } from 'react-router-dom';
 import Login from './Login.js'
 
 import '../styles/login-page.scss'
@@ -15,7 +15,7 @@ const LoginPage = (props) => {
                 </div>
                 <Login props={props}/>
                 <div className = "need-account">
-                    <p>Don't have an account? <a href="http://social-worker-tool/signup">Join Here</a></p>
+                    <p>Don't have an account? <Link to='/signup'>Join Here</Link></p>
                 </div>
             </div>
         </div>

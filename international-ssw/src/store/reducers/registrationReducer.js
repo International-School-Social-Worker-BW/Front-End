@@ -30,6 +30,7 @@ import {
           
         };
       case REGISTRATION_FAILURE:
+        console.log('regfail', action.payload)
           return {
               ...state,
               error: action.payload,

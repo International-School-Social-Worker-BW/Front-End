@@ -2,8 +2,8 @@
 //have an add student button, and also have a nav bar
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
-import { Link, Route } from 'react-router-dom';
-import { fetchStudents } from '../store/actions';
+import { Link, withRouter } from 'react-router-dom';
+import { fetchStudents, fetchUser } from '../store/actions';
 import { connect } from 'react-redux';
 import { StudentsTable } from './StudentsTable/StudentsTable';
 import Pagination from './Pagination.js';
@@ -13,14 +13,18 @@ class UserHomePage extends React.Component {
     
     componentDidMount(){
         this.props.fetchStudents();
+        // this.props.fetchUser();
         console.log("wegothere");
     }
    render() 
+
+
    
    
    { console.log("userpage", this.props.data); 
    return (
         <section className="home-page">
+            
             <ProtectedNavBar />
             <div className="container home-page-content">
             <h1>Ghana Makes A Difference</h1>
@@ -28,7 +32,7 @@ class UserHomePage extends React.Component {
             <Link to='/add'><button>Add Student</button></Link>
             
             <div className="students-list">
-                {/* <StudentsTable student={this.props.data} /> */}
+                <StudentsTable student={this.props.data} />
             </div>
             <Pagination />
             </div>
@@ -40,4 +44,4 @@ const mapStateToProps = state =>   ({
     fetching: state.studentReducer.fetching,
     error: state.studentReducer.error
    })
-export default connect(mapStateToProps, { fetchStudents }) (UserHomePage);
+export default withRouter(connect(mapStateToProps, { fetchStudents }) (UserHomePage));

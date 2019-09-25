@@ -18,12 +18,16 @@ export const login = ({useremail, password}, props) => dispatch => {
       }
     }
   )
-      .then(res => localStorage.setItem("token", res.data.access_token))
+      .then(res => {
+        console.log("logindata", res.data)
+        localStorage.setItem("token", res.data.access_token)
+      })
   // .then(props.history.push('/protected'))
       // .then(res => {
       //   dispatch({ type: LOGIN_SUCCESS, payload: res.data});
       //   return true;
       // })
+      
       .then(res => props.props.history.push('/protected'))
   .catch(res => {
     dispatch({      
@@ -42,12 +46,12 @@ export const addUser = (index, props) => dispatch => {
     axios
         .post(`https://jondscott21-internationschool.herokuapp.com/createnewuser`, index)
         .then(res => {
-            console.log(res.data)
+            console.log("thisusermadeit", res.data)
             dispatch({ type: REGISTRATION_SUCCESS, payload: res.data });
             return true;
           })
           .catch(err => {
-            console.log(err);
+            console.log("thisusermadeiterror", err);
             dispatch({ type: REGISTRATION_FAILURE, payload: err.response });
           });
 };
@@ -58,7 +62,8 @@ export const ROLE_FAILURE = "ROLE_FAILURE";
 
 export const addRole = (index, props) => dispatch => {
   dispatch({type: ADD_ROLE})
-  axiosWithAuth().post(`/users/user/${props.userid}/role/{roleid}`, index)
+  console.log("role", index)
+  axiosWithAuth().post(`/users/user/${index.user.userid}/role/${index.roleid}`, index)
       .then(res => {
           console.log(res.data)
           dispatch({ type: ROLE_SUCCESS, payload: res.data });
@@ -74,7 +79,7 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 
-export const fetchStudents = index =>dispatch => {
+export const fetchStudents = index => dispatch => {
   console.log("inaction");
   dispatch({ type: FETCH_START});
   axiosWithAuth()

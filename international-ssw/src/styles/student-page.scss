@@ -1,0 +1,184 @@
+$primary-color: #384148;
+$blue:  #5DB0C7;
+$white: #fff;
+$red: #BA4F34;
+
+%section-formatting {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:100px; 
+    width: 60%;
+}
+
+@mixin style(){
+
+}
+
+input{
+    font-size:1.8rem;
+}
+
+.info-container{
+    display: flex;
+    justify-content: center;
+    // margin-top: 50px;
+    // background: $primary-color;
+    // border: 1px solid black;
+    // width: 80%;
+    // background: coral;
+}
+
+.info {
+    display: flex;
+    flex-direction:column;
+    background: white;
+    margin-top: 50px;
+    // border: 1px solid coral;
+    width: 90%;
+    // padding:1.5%;
+}
+
+span{
+    font-weight: bold;
+    font-size:2rem;
+}
+
+h1 {
+    color: $primary-color;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+h2 {
+    color: $primary-color;
+    font-size: 1.8rem;
+}
+
+
+
+
+
+//----------------Name/Edit-----------------
+.name-editbutton{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width:100%;
+    border-bottom: 2px solid $primary-color;
+    padding-bottom:1%;
+    margin-bottom: 30px;
+}
+
+button {
+    height: 35px;
+    background: #5DB0C7;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    font-weight: bold;
+    color: white;
+    font-size: 1.8rem
+
+}
+
+
+//----------------student info-----------------
+.student-info{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom:30px;
+
+    @media (max-width: 500px){
+        flex-wrap: wrap;
+        margin-bottom:0;
+    }
+}
+
+.student-info h2{
+    @media (max-width: 500px){
+        margin-right: 20px;
+        margin-bottom: 30px;
+    }
+}
+
+
+//----------------contact-----------------
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 55%;
+    // background: coral;
+
+    @media (max-width: 500px){
+        flex-direction: column;
+        margin-right: 20px;
+    }
+}
+
+.contact-info h2 {
+    @media (max-width: 500px){
+        margin-bottom: 30px;
+    }
+}
+
+//----------------contact-2-----------------
+
+.contact-info-2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:30px;
+    width: 71%;
+    // background: coral;
+
+    @media (max-width: 500px){
+        flex-direction: column;
+    }
+}
+
+.contact-info-2 h2 {
+    @media (max-width: 500px){
+        margin-bottom: 30px;
+    }
+}
+
+//----------------contact-----------------
+.disabilty{
+    margin-bottom: 50px;
+}
+
+//----------------background-----------------
+.background-info{
+    margin-bottom: 50px;
+}
+
+.background-info h1{
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 1%;
+    margin-bottom: 10px;
+}
+
+.background-info p {
+    font-size: 1.8rem;
+    color: $primary-color;
+}
+
+
+//----------------critical info-----------------
+.info .critical-info{
+    margin-bottom: 30px;
+    padding-left: 0;
+    padding-right:0;
+}
+
+.critical-info h1{
+    border-bottom: 2px solid $red;
+    padding-bottom: 1%;
+    margin-bottom: 10px;
+    color: $red;
+}
+
