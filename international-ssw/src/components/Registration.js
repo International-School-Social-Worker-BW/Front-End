@@ -58,7 +58,7 @@ class SignUp extends React.Component {
         console.log("reg page", this.state);
         return(
             <form className = "registration-form" onSubmit={this.handleSubmit}>
-                <FormTitle>Sign Up Today</FormTitle>
+                <FormTitle className = "form-title">Sign Up Today</FormTitle>
                 <Input className="registration-input">
                     <label>First Name</label>
                     <input 
@@ -114,6 +114,7 @@ class SignUp extends React.Component {
                     name="organization"
                 >
                     <option disabled selected value>--</option>
+                    <option>Select an Organization</option>
                     <option value="Ghana Makes A Difference">Ghana Makes A Difference</option>                    
                     <option value="Social Workers of Ghana">Social Workers of Ghana</option>
                     <option value="SCEF">SCEF</option>

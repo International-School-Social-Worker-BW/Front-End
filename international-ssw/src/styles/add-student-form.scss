@@ -26,6 +26,10 @@ $white: #fff;
     border-radius: 5px;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
 .add-form label{
     color: $primary-color;
 }
@@ -77,18 +81,34 @@ $white: #fff;
     padding-left: 5%;
     padding-right: 5%;
     height:100px; 
-    width: 70%;
-
-    @media(max-width: 1024px){
-        width:80%;
-    }
+    width: 100%;
 
     @media(max-width: 500px){
         flex-direction: column;
         height: 150px;
-        width: 100%;
-        // margin-top: 20px;
     }
+
+    // @media(max-width: 1024px){
+    //     width:80%;
+    // }
+
+    // @media(max-width: 500px){
+    //     flex-direction: column;
+    //     height: 150px;
+    //     width: 100%;
+    //     // margin-top: 20px;
+    // }
+}
+
+.age-grade .student-input{
+    width: 45%;
+
+    @media(max-width: 500px){
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    // margin-right: 5%;
+    // margin-left: 2%;
 }
 
 
@@ -117,6 +137,7 @@ $white: #fff;
 
 .student-statuses select {
     height: 35px;
+    width: 150px;
     color: $primary-color;
     font-size:1.8rem;
 }
