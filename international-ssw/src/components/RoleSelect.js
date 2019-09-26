@@ -8,7 +8,7 @@ const RoleSelect = props => {
         user: {},
         roleid: null
     });
-console.log('roleprops', props);
+    console.log('roleprops', props);
     useEffect(() => {  
         axiosWithAuth()
             .get(`/users/getcurrentuser`)

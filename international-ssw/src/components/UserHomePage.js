@@ -13,7 +13,7 @@ class UserHomePage extends React.Component {
     //     super(props);
 
     //     this.state = {
-    //         currentUser: 
+    //         currentUser: {}
     //     }
     // } 
      
