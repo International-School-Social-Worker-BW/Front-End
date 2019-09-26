@@ -12,7 +12,7 @@ import {
     fetchingData: false,
     userrole: [],
     addRole: [],
-    user: {}
+    user: []
   };
   
 export const roleReducer = (state = initialState, action) => {
@@ -41,21 +41,21 @@ export const roleReducer = (state = initialState, action) => {
           case FETCH_USER:             
             return{
               ...state, 
-              fetchingData:true
+              fetchingData: true
             };
 
         case USER_SUCCESS:
             console.log("rolereducer", action.payload);
             return{
               ...state, 
-              user:action.payload, 
-              fetchingData:false
+              user: action.payload, 
+              fetchingData: false
             };
         case USER_FAILURE:
             return{
               ...state, 
               error:action.payload, 
-              fetchingData:false
+              fetchingData: false
             };
       default:
           return state 

@@ -121,7 +121,7 @@ export const fetchUser = index => dispatch => {
   axiosWithAuth()
     .get(`/users/getcurrentuser`)
     .then(res => {
-      console.log('fetched User', res)
+      console.log('fetchedUser', res.data)
       dispatch({type:USER_SUCCESS, payload:res.data})
       return true;
     })

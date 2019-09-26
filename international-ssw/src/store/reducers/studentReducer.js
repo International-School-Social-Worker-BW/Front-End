@@ -21,6 +21,7 @@ export const studentReducer =(state = initialState, action) => {
                 fetching:true
             };
         case FETCH_SUCCESS:
+                console.log("studentreducer", action.payload);
             return{
                 ...state, 
                 data:action.payload, 
