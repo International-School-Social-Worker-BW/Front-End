@@ -25,7 +25,7 @@ const FormTitle = styled.h1 `
     color: #55A0B5;
     text-align: center;
 `
-class SignUp extends React.Component {
+class Registration extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -48,8 +48,7 @@ class SignUp extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.addUser(this.state, this.props)
-        this.props.props.history.push('/role');
+        this.props.addUser(this.state, this.props)        
     }
 
     
@@ -138,7 +137,7 @@ const mapStateToProps = state => {
     };
   };
 
-export default connect(mapStateToProps, { addUser })(SignUp);
+export default connect(mapStateToProps, { addUser })(Registration);
 
 
 // export default function SignUp (props) {

@@ -36,13 +36,16 @@ export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
 export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
 
 export const addUser = (index, props) => dispatch => {
+    console.log("adduserIndex", index);
     dispatch({ type: ADD_USER });
     axios
       .post(`https://jondscott21-internationschool.herokuapp.com/createnewuser`, index)
       .then(res => {
           console.log("addUserPost", res.data)
-          localStorage.setItem("token", res.data.access_token)
           dispatch({ type: REGISTRATION_SUCCESS, payload: res.data })
+      })
+      .then(res => {
+        this.props.props.history.push('/signin')
       })
       .catch(err => {
         console.log("addUser ERROR", err);

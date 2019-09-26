@@ -131,7 +131,7 @@ handleSubmit = e => {
 
                         <div className = "disabilities">
 
-                        <Input className = "student-input">
+                        <Input className = "student-input-1">
                             <label>Do they have Insurance?</label>
                             <select
                                 value={this.state.insurance}
@@ -144,7 +144,7 @@ handleSubmit = e => {
                                 <option value={false}>No</option>
                             </select>
                         </Input>
-                        <Input className = "student-input">
+                        <Input className = "student-input-2">
                             <label>Do they have any physical, intellectual, emotional, behavioral or learning disabilities?</label>
                             <select
                                 value={this.state.specialneeds}
