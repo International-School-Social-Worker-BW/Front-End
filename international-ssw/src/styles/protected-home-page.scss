@@ -1,0 +1,21 @@
+
+.home-page-content h1 {
+  color: $dark-grey;
+  padding-bottom: 1.5em;
+  padding-top: 0.5em;
+}
+
+.home-page-content .add-student-btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 3px;
+  border: 1px solid $blue;
+  color: $dark-grey;
+  font-size: 1.4em;
+  margin-bottom: 1.4em;
+  background: $blue;
+  color: $white;
+  letter-spacing: .5px;
+  text-decoration: none;
+}
+
