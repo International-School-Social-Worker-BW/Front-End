@@ -19,8 +19,8 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route  path='/about' component={Home} />
           <Route path='/add' component={AddStudent} />
-          <Route path='/student/:id' component={({match})=>(<StudentComponent match={match}/>)} />
           <Route path='/student/:id/edit' component={EditStudent}/>
+          <Route path='/student/:id' component={({match})=>(<StudentComponent match={match}/>)} />
           <Route path='/signin' component={LoginPage} /> 
           <Route path='/signup' component={RegistrationPage} /> 
           <PrivateRoute path='/protected' component={UserHomePage} />
