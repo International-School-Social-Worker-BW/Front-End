@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import { login } from '../store/actions';
 
+
+
 const Input = styled.div `
     display: flex;
     flex-direction: column;
@@ -13,8 +15,8 @@ const Input = styled.div `
 const Login = (props) => {
    
     const [credentials, setCredentials] = useState({
-      useremail: 'jon@jon.com',
-      password: 'password'
+      useremail: '',
+      password: ''
     });
   
     const handleChange = event => {

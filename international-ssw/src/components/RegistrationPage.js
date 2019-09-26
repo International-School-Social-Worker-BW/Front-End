@@ -1,10 +1,14 @@
 import React from 'react'
 import '../styles/registration-page.scss'
+
+import { NavBar } from './NavBar';
 import Registration from './Registration.js';
 
 
 const RegistrationPage = (props) => {
     return (
+        <div>
+            <NavBar/>
         <div className = "registration-page">
             <div className = "container">
                 <div className = "title">
@@ -15,6 +19,7 @@ const RegistrationPage = (props) => {
                     <p>By joining you’re agreeing to our terms of service</p>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

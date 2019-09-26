@@ -1,18 +1,19 @@
+
 .top-header {
   box-shadow: 0 3px 5px 0 rgba(0,0,0,.27);
   background: $dark-grey;
-  color: #white;
-  height: 10vh
+  color: white;
+  height: 70px;
 }
 
 .header-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #white;
+  color: white;
 
   .logo {
-   }
+  }
 
   nav {
     width: 50%;
@@ -27,6 +28,10 @@
       }
 
     }
+
+    @media (max-width: 500px){
+      width: 70%;
+    }
   }
 }
 
@@ -40,7 +45,7 @@ nav li {
 }
 
 nav a {
-  font-size: 1.5em;
+  font-size: 1.8rem;
 }
 nav a:hover {
   text-decoration: underline;

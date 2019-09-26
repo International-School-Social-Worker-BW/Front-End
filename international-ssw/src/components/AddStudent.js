@@ -25,9 +25,9 @@ class AddStudent extends React.Component {
             age: null,
             grade: null,
             status: "",
-            birthcertificate: false,
-            insurance: true,
-            specialneeds: false,
+            birthcertificate: "",
+            insurance: "",
+            specialneeds: "",
             contactname: "",
             relationship: "",
             contactphone: "",
@@ -57,6 +57,7 @@ handleSubmit = e => {
                 <div className = "form-container">
                 <form className = "add-form" onSubmit={this.handleSubmit}>
 
+                    <h1>Add Student</h1>
                     <div className = "name-section" >
                         <Input className = "student-input">
                             <label>First Name</label>
@@ -126,8 +127,11 @@ handleSubmit = e => {
                                 <option value={false}>No</option>
                             </select>
                         </Input>
+                        </div>
 
-                        <Input className = "student-input">
+                        <div className = "disabilities">
+
+                        <Input className = "student-input-1">
                             <label>Do they have Insurance?</label>
                             <select
                                 value={this.state.insurance}
@@ -140,10 +144,7 @@ handleSubmit = e => {
                                 <option value={false}>No</option>
                             </select>
                         </Input>
-                        </div>
-
-                        <div className = "disabilities">
-                        <Input className = "student-input">
+                        <Input className = "student-input-2">
                             <label>Do they have any physical, intellectual, emotional, behavioral or learning disabilities?</label>
                             <select
                                 value={this.state.specialneeds}

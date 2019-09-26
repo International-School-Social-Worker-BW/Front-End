@@ -16,11 +16,23 @@ export const initialState = {
 export const studentReducer =(state = initialState, action) => {
     switch (action.type) {
         case FETCH_START:
-            return{...state, fetching:true};
+            return{
+                ...state, 
+                fetching:true
+            };
         case FETCH_SUCCESS:
-            return{...state, data:action.payload, fetching:false};
+                console.log("studentreducer", action.payload);
+            return{
+                ...state, 
+                data:action.payload, 
+                fetching:false
+            };
         case FETCH_FAILURE:
-            return{...state, error:action.payload, fetching:false};
+            return{
+                ...state, 
+                error:action.payload, 
+                fetching:false
+            };
             case ADD_STUDENT:
                 return {
                   ...state,

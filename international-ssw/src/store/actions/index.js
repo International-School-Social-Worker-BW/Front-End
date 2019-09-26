@@ -36,13 +36,18 @@ export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
 export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
 
 export const addUser = (index, props) => dispatch => {
+    console.log("adduserIndex", props);
     dispatch({ type: ADD_USER });
     axios
       .post(`https://jondscott21-internationschool.herokuapp.com/createnewuser`, index)
       .then(res => {
-          console.log("addUserPost", res.data)
-          localStorage.setItem("token", res.data.access_token)
+          console.log("addUserPost")
           dispatch({ type: REGISTRATION_SUCCESS, payload: res.data })
+          return true;
+      })
+      .then(res => {
+        console.log('I made it to addUSer Then')
+        props.props.history.push('/signin')
       })
       .catch(err => {
         console.log("addUser ERROR", err);
@@ -118,7 +123,7 @@ export const fetchUser = index => dispatch => {
   axiosWithAuth()
     .get(`/users/getcurrentuser`)
     .then(res => {
-      console.log('fetched User', res)
+      console.log('fetchedUser', res.data)
       dispatch({type:USER_SUCCESS, payload:res.data})
       return true;
     })
