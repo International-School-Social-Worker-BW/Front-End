@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MdHome, MdArrowDropDown } from 'react-icons/md'
+import { MdHome, MdArrowDropDown, MdPerson } from 'react-icons/md'
 import { fetchUser } from '../store/actions';
 import { connect } from 'react-redux';
 
@@ -29,7 +29,7 @@ render ()
             </li>
             <li className="user">
               <a href="" className="trigger">
-                <span>{this.props.userfirstname}</span>
+                <span><MdPerson /></span>
                 <span className="caret">
                   <MdArrowDropDown />
                 </span>
