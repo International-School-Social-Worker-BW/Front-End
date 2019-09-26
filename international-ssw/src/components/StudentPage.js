@@ -1,5 +1,4 @@
 import React from "react";
-import {connect} from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import ProtectedNavBar from './ProtectedNavBar.js';
@@ -15,7 +14,15 @@ const StudentPage = (props) => {
           <div className = "info">
           <div className = "name-editbutton">
             <h1>{props.student.studentfirstname} {props.student.studentlastname}</h1>
-            <NavLink to={`/student/${props.student.studentid}/edit`}><button>Edit Information</button></NavLink>
+            <NavLink to={`/student/${props.student.studentid}/edit`} ><button>Edit Information</button></NavLink>
+            {/* <NavLink
+              to={{
+                pathname: `/student/${props.student.studentid}/edit`,
+                state: {
+                  student: props.student
+                }
+              }}
+            ><button>Edit Information</button></NavLink> */}
           </div>
 
           <div className = "student-info">
@@ -54,12 +61,6 @@ const StudentPage = (props) => {
       </div>
 
     )
-  }
-//   const mapStateToProps = state =>   ({
-//     data: state.studentReducer.data,
-//     fetching: state.studentReducer.fetching,
-//     error: state.studentReducer.error
-//    })
-export default connect(null, { }) (StudentPage);
+}
 
-// export default StudentPage;
+export default StudentPage;

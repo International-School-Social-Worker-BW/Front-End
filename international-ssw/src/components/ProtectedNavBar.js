@@ -1,18 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { MdHome, MdArrowDropDown, MdPerson } from 'react-icons/md'
 import { fetchUser } from '../store/actions';
 import { connect } from 'react-redux';
 
+
 class ProtectedNavBar extends React.Component {
 
-  componentDidMount(){
-    this.props.fetchUser();
-    console.log("wegotaUser", this.props);
-    console.log("username", this.props.userfirstname)
-}
-
-render ()
+  render ()
   {return (
     <header className='top-header protected-nav'>
       <div className="container header-nav protected-nav">
@@ -31,7 +27,9 @@ render ()
             </li>
             <li className="user">
               <a href="" className="trigger">
+
                 <span><MdPerson /></span>
+
                 <span className="caret">
                   <MdArrowDropDown />
                 </span>
@@ -53,9 +51,5 @@ render ()
     </header>
   )}
 }
-const mapStateToProps = state =>   ({
-  data: state.roleReducer.data,
-  fetchingData: state.roleReducer.fetching,
-  error: state.roleReducer.error
- })
-export default connect(mapStateToProps, {fetchUser}) (ProtectedNavBar)
+
+export default ProtectedNavBar;

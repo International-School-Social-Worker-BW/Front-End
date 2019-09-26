@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Registration from './Registration.js';
 import { NavBar } from './NavBar';
 import '../styles/sign-up.scss'
 import '../styles/variables.scss'
+import Registration from './Registration.js';
 
 
 

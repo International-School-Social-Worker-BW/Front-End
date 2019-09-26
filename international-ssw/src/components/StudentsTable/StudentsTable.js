@@ -11,12 +11,14 @@ export const StudentsTable = (props) => {
         <Header />
         <tbody>
           {props.student.map(student => (
+
               <RowData key={student.studentid} student={student}/>
+
           ))}
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="5" className="text-center">Student data</td>
+            <td colSpan="5" className="text-center">Student data</td>
           </tr>
         </tfoot>
       </table>
