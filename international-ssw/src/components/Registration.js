@@ -1,11 +1,9 @@
-import React,{ useState, useEffect } from 'react'; 
-import { Link, Route } from 'react-router-dom';
-// import { useDispatch } from "react-redux";
-import { addUser } from '../store/actions';
+import React from 'react'; 
 import styled from "styled-components";
+import {connect} from 'react-redux';
+import { addUser } from '../store/actions';
 import '../styles/sign-up.scss'
 import '../styles/variables.scss'
-import {connect} from 'react-redux';
 
 const Input = styled.div `
     display: flex;
@@ -37,6 +35,7 @@ class Registration extends React.Component {
             userlastname: '',            
             userphone: ''                       
         }
+        console.log('reg Props', props)
     };
 
     handleChange = e => {
@@ -48,7 +47,8 @@ class Registration extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.addUser(this.state, this.props)        
+        this.props.addUser(this.state, this.props)
+        console.log('Reg handleSubmit', this.props)        
     }
 
     

@@ -59,7 +59,7 @@ transform: translate(-50%, -50%);
 
 
 const Home = (props) => {
-
+console.log("homepage Props", props.history)
     return (
       <div>
         <NavBar />

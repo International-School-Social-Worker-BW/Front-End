@@ -6,7 +6,8 @@ import {
   
   const initialState = {
     error: '',
-    fetchingData: false
+    fetchingData: false,
+    adduser: ''
   };
   
 export const registrationReducer = (state = initialState, action) => {
@@ -19,6 +20,7 @@ export const registrationReducer = (state = initialState, action) => {
       case REGISTRATION_SUCCESS:
         return {
           ...state,
+          adduser: action.payload,
           fetchingData: false                    
         };
       case REGISTRATION_FAILURE:

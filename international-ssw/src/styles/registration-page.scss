@@ -41,10 +41,13 @@
     align-items:center;
     border: 2px solid white;
     border-radius: 5px;
-    width: 60%;
+    width: 80%;
     margin:0;
     padding:5%;
-    // transform: translate(-50%, -50%);
+    
+    @media (max-width: 500px){
+        width:100%;
+    }
 }
 
 
@@ -76,16 +79,27 @@
 .registration-page .title p {
     margin: 2%;
 
+    @media (max-width: 500px){
+        font-size: 3rem;
+    }
+
 }
 
 .registration-page .already-have-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 3px solid white;
     border-radius: 5px;
-    width: 60%;
+    width: 80%;
     font-size:2rem;
     color: white;
     margin-top: 30px;
     text-align:center;
+
+    @media (max-width: 500px){
+        width: 100%;
+    }
 }
 
 .registration-page .container {
@@ -93,7 +107,7 @@
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    margin-top:50px;
+    margin-top:30px;
 
 }
 
