@@ -15,13 +15,13 @@ export const StudentsTable = (props) => {
         <Header />
         <tbody>
           {props.student.map(student => (
-            <NavLink to={`/student/${student.studentid}`} style={{ textDecoration: 'none', color: 'green', display: 'flex' }}>
+            <NavLink key={student.studentid} to={`/student/${student.studentid}`} style={{ textDecoration: 'none', color: 'green', display: 'flex' }}>
             <RowData key={student.studentid} student={student}/></NavLink>
           ))}
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="5" className="text-center">Student data</td>
+            <td colSpan="5" className="text-center">Student data</td>
           </tr>
         </tfoot>
       </table>

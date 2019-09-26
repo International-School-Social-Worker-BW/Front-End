@@ -1,5 +1,4 @@
 import React from "react";
-import {connect} from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import ProtectedNavBar from './ProtectedNavBar.js';
@@ -54,12 +53,6 @@ const StudentPage = (props) => {
       </div>
 
     )
-  }
-//   const mapStateToProps = state =>   ({
-//     data: state.studentReducer.data,
-//     fetching: state.studentReducer.fetching,
-//     error: state.studentReducer.error
-//    })
-export default connect(null, { }) (StudentPage);
+}
 
-// export default StudentPage;
+export default StudentPage;

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Registration from './Registration.js';
 import { NavBar } from './NavBar';
 import '../styles/sign-up.scss'
 import '../styles/variables.scss'
+import SignUp from './SignUp.js';
 
 
 
@@ -73,7 +73,7 @@ const Home = (props) => {
                       <HomeImage src="../../../assets/school_kids.jpg" alt="User Quote"/>
                   </Div>
               </ImageContainer>
-              <Registration props={props}/>
+              <SignUp props={props}/>
           </Body>
 
         </Container>
