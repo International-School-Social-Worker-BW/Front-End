@@ -17,34 +17,37 @@ const Input = styled.div `
 class AddStudent extends React.Component {
     
     constructor(props){
-       super(props);
-       this.state = {
-    studentid: null,
-    studentfirstname: "",
-    studentlastname: "",
-    age: null,
-    grade: null,
-    status: "",
-    birthcertificate: false,
-    insurance: true,
-    specialneeds: false,
-    contactname: "",
-    relationship: "",
-    contactphone: "",
-    contactemail: "",
-    backgroundinfo: "",
-    criticalinfo: ""
+        super(props);
+        this.state = {
+            studentid: null,
+            studentfirstname: "",
+            studentlastname: "",
+            age: null,
+            grade: null,
+            status: "",
+            birthcertificate: false,
+            insurance: true,
+            specialneeds: false,
+            contactname: "",
+            relationship: "",
+            contactphone: "",
+            contactemail: "",
+            backgroundinfo: "",
+            criticalinfo: ""
+        }
     }
-}
 
 handleSubmit = e => {
+    console.log(this.state)
     e.preventDefault()
     this.props.addStudent(this.state, this.props);
 
+    this.props.history.push('/protected');
+}
 
-    this.props.history.push('/protected');};
 
     handleChange = event => {
+        console.log(this.state)
         event.preventDefault();
         this.setState({[event.target.name]: event.target.value});
     };
@@ -197,11 +200,11 @@ handleSubmit = e => {
                                 required               
                             >
                                 <option>Select an Option</option>
-                                <option value="mother">Mother</option>                    
-                                <option value="father">Father</option>
-                                <option value="guardian">Guardian</option>
-                                <option value="grandparent">Gradparent</option>
-                                <option value="other relation">Other Relation</option>
+                                <option value="Mother">Mother</option>                    
+                                <option value="Father">Father</option>
+                                <option value="Guardian">Guardian</option>
+                                <option value="Grandparent">Gradparent</option>
+                                <option value="Other Relation">Other Relation</option>
                             </select>
                         </Input>
                     </div>
