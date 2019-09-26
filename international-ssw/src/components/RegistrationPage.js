@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/registration-page.scss'
-import SignUp from './SignUp.js';
+import Registration from './Registration.js';
 
 
 const RegistrationPage = (props) => {
@@ -10,7 +10,7 @@ const RegistrationPage = (props) => {
                 <div className = "title">
                     <p>Create an Educell Account</p>
                 </div>
-                <SignUp props = {props}/>
+                <Registration props={props}/>
                 <div className = "already-have-account">
                     <p>By joining you’re agreeing to our terms of service</p>
                 </div>

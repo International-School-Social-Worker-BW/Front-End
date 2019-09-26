@@ -35,7 +35,7 @@ export const ADD_USER = "ADD_USER";
 export const REGISTRATION_SUCCESS = "REGISTRATION_SUCCESS";
 export const REGISTRATION_FAILURE = "REGISTRATION_FAILURE";
 
-export const addUser = index => dispatch => {
+export const addUser = (index, props) => dispatch => {
     dispatch({ type: ADD_USER });
     axios
       .post(`https://jondscott21-internationschool.herokuapp.com/createnewuser`, index)

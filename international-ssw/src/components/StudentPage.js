@@ -14,7 +14,15 @@ const StudentPage = (props) => {
           <div className = "info">
           <div className = "name-editbutton">
             <h1>{props.student.studentfirstname} {props.student.studentlastname}</h1>
-            <NavLink to={`/student/${props.student.studentid}/edit`}><button>Edit Information</button></NavLink>
+            <NavLink to={`/student/${props.student.studentid}/edit`} ><button>Edit Information</button></NavLink>
+            {/* <NavLink
+              to={{
+                pathname: `/student/${props.student.studentid}/edit`,
+                state: {
+                  student: props.student
+                }
+              }}
+            ><button>Edit Information</button></NavLink> */}
           </div>
 
           <div className = "student-info">

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { NavBar } from './NavBar';
 import '../styles/sign-up.scss'
 import '../styles/variables.scss'
-import SignUp from './SignUp.js';
+import Registration from './Registration.js';
 
 
 
@@ -73,7 +73,7 @@ const Home = (props) => {
                       <HomeImage src="../../../assets/school_kids.jpg" alt="User Quote"/>
                   </Div>
               </ImageContainer>
-              <SignUp props={props}/>
+              <Registration props={props}/>
           </Body>
 
         </Container>
