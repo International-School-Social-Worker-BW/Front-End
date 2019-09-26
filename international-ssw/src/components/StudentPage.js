@@ -6,7 +6,7 @@ import ProtectedNavBar from './ProtectedNavBar.js';
 import '../styles/student-page.scss'
 
 const StudentPage = (props) => {
-  console.log('studentpropsmadeit', props);
+  console.log('studentpropsmadeit', props.student);
   
     return (
       <div>
@@ -22,8 +22,8 @@ const StudentPage = (props) => {
             <h2><span>Age: </span>{props.student.age}</h2>
             <h2><span>Grade: </span>{props.student.grade}</h2>
             <h2><span>Status: </span>{props.student.status}</h2>
-            <h2><span>Birth Certificate: </span>{props.student.birthcertificate}</h2>
-            <h2><span>Insurance: </span>{props.student.insurance}</h2>
+            <h2><span>Birth Certificate: </span>{props.student.birthcertificate ? "Yes" : "No"}</h2>
+            <h2><span>Insurance: </span>{props.student.insurance ? "Yes" : "No"}</h2>
           </div>
 
           <div className="contact-info">
@@ -37,7 +37,7 @@ const StudentPage = (props) => {
           </div>
 
           <div className ="disabilty">
-            <h2><span>Experiences a disability: </span>{props.student.specialneeds}</h2>
+            <h2><span>Experiences a disability: </span>{props.student.specialneeds ? "Yes" : "No"}</h2>
           </div>
 
           <div className = "background-info">
