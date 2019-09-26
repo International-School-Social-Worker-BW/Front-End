@@ -23,9 +23,9 @@ export const registrationReducer = (state = initialState, action) => {
         };
       case REGISTRATION_FAILURE:
           return {
-              ...state,
-              error: action.payload,
-              fetchingData: false
+            ...state,
+            error: action.payload,
+            fetchingData: false
           };
       default:
           return state;
