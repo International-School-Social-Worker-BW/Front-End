@@ -44,138 +44,202 @@ export default function EditStudent (props) {
     }
     console.log(editStudent)
     return (
-        <section>
+        <section className="edit-student-page">
            <ProtectedNavBar />
             
-            <h1>Update Student</h1>
-            <form onSubmit={handleSubmit}>
-                <label>First Name</label>
-                <input 
-                type="text" 
-                name="studentfirstname" 
-                onChange={handleChange} 
-                value={editStudent.studentfirstname} required />
+          <div className="container edit-student-content">
+            <div className="edit-header">
+              <h1>Update Student</h1>
+            </div>
 
-                <label>Last Name</label>
-                <input 
-                type="text" 
-                name="studentlastname" 
-                onChange={handleChange} 
-                value={editStudent.studentlastname} required />
+            <form className="edit-form" onSubmit={handleSubmit} >
+                <div className="input-container">
+                  <div className="input-1-2">
+                    <label>First Name</label>
+                    <input 
+                    type="text" 
+                    name="studentfirstname" 
+                    onChange={handleChange} 
+                    value={editStudent.studentfirstname} required />
+                  </div>
+                  
+                  <div className="input-1-2">
+                    <label>Last Name</label>
+                    <input 
+                    type="text" 
+                    name="studentlastname" 
+                    onChange={handleChange} 
+                    value={editStudent.studentlastname} required />
+                  </div>
+                </div>
 
-                <label>Age</label>
-                <input 
-                type="text" 
-                name="age" 
-                onChange={handleChange} 
-                value={editStudent.age} required />
-
-                <label>Grade</label>
-                <input 
-                type="text" 
-                name="grade" 
-                onChange={handleChange}
-                value={editStudent.grade} required />
-
-                <label>Student Status:</label>
-                <select
-                    value={editStudent.status}
+                <div className="input-container">
+                  <div className="input-1-2">
+                    <label>Age</label>
+                    <input 
+                    type="text" 
+                    name="age" 
+                    onChange={handleChange} 
+                    value={editStudent.age} required />
+                  </div>
+                  
+                  <div className="input-1-2">
+                    <label>Grade</label>
+                    <input 
+                    type="text" 
+                    name="grade" 
                     onChange={handleChange}
-                    name="status"
-                    required                
-                >
-                    <option value="Current Student">Current Student</option>                    
-                    <option value="Past Student">Past Student</option>
-                    <option value="Visiting">Visiting</option>
-                </select>
+                    value={editStudent.grade} required />
+                  </div>
+                </div>
 
-                <label>Birth Certificate?</label>
-                <select
-                    value={editStudent.birthcertificate}
+                <div className="input-container top-bar">
+                  <div className="input-1">
+                    <label className="select-label">Student Status:</label>
+                    <select
+                      className="input-select"
+                      value={editStudent.status}
+                      onChange={handleChange}
+                      name="status"
+                      required                
+                    >
+                        <option value="Current Student">Current Student</option>                    
+                        <option value="Past Student">Past Student</option>
+                        <option value="Visiting">Visiting</option>
+                    </select>
+                  </div>
+                </div>
+                  
+                <div className="input-container">
+                  <div className="input-1">
+                    <label className="select-label">Birth Certificate?</label>
+                    <select
+                      className="input-select"
+                      value={editStudent.birthcertificate}
+                      onChange={handleChange}
+                      name="birthcertificate" 
+                      required               
+                    >
+                        <option value="true">Yes</option>                    
+                        <option value="false">No</option>
+                    </select>
+                  </div>
+                </div>
+                  
+                <div className="input-container">
+                  <div className="input-1">
+                    <label className="select-label">Insurance?</label>
+                    <select
+                      className="input-select"
+                      value={editStudent.insurance}
+                      onChange={handleChange}
+                      name="insurance" 
+                      required               
+                    >
+                        <option value="true">Yes</option>                    
+                        <option value="false">No</option>
+                    </select>
+                  </div>
+                </div>
+                  
+
+                <div className="input-container">
+                  <div className="input-1">
+                    <label className="select-label">Special needs?</label>
+                    <select
+                      className="input-select"
+                      value={editStudent.specialneeds}
+                      onChange={handleChange}
+                      name="specialneeds" 
+                      required               
+                    >
+                        <option value="true">Yes</option>                    
+                        <option value="false">No</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="input-container top-bar">
+                  <div className="input-1-2">
+                    <label>Contact Name</label>
+                    <input 
+                    type="text" 
+                    name="contactname" 
+                    onChange={handleChange} 
+                    value={editStudent.contactname} required />
+                  </div>
+                  <div className="input-1-2">
+                    <label>Contact Email</label>
+                    <input 
+                    type="email" 
+                    name="contactemail" 
                     onChange={handleChange}
-                    name="birthcertificate" 
-                    required               
-                >
-                    <option value="true">Yes</option>                    
-                    <option value="false">No</option>
-                </select>
+                    value={editStudent.contactemail} required />
+                  </div>
+                  
+                </div>
 
-                <label>Insurance?</label>
-                <select
-                    value={editStudent.insurance}
+                <div className="input-container">
+                  <div className="input-1-2">
+                    <label>Contact Phone</label>
+                    <input 
+                    type="text" 
+                    name="contactphone" 
+                    onChange={handleChange} 
+                    value={editStudent.contactphone} required />
+                    
+                  </div>
+                </div>
+
+                <div className="input-container">
+                  <div className="input-1">
+                    <label className="select-label">Relationship:</label>
+                    <select
+                      className="input-select"
+                        value={editStudent.relationship}
+                        onChange={handleChange}
+                        name="relationship"
+                        required                
+                    >
+                        <option value="mother">Mother</option>                    
+                        <option value="father">Father</option>
+                        <option value="guardian">Guardian</option>
+                        <option value="grandparent">Gradparent</option>
+                        <option value="other relation">Other Relation</option>
+                    
+                    </select>
+                  </div>
+                </div>
+
+                <div className="input-container top-bar">
+                  <div className="input-1">
+                    <label>Background Info</label>
+                    <textarea 
+                    name="backgroundinfo" 
                     onChange={handleChange}
-                    name="insurance" 
-                    required               
-                >
-                    <option value="true">Yes</option>                    
-                    <option value="false">No</option>
-                </select>
+                    value={editStudent.backgroundinfo} required />
+                  </div>
+                </div>
 
-                <label>Special needs?</label>
-                <select
-                    value={editStudent.specialneeds}
+                <div className="input-container">
+                  <div className="input-1">
+                    <label>Critical Info</label>
+                    <textarea
+                    name="criticalinfo" 
                     onChange={handleChange}
-                    name="specialneeds" 
-                    required               
-                >
-                    <option value="true">Yes</option>                    
-                    <option value="false">No</option>
-                </select>
-
-                <label>Contact Name:</label>
-                <input 
-                type="text" 
-                name="contactname" 
-                onChange={handleChange} 
-                value={editStudent.contactname} required />
-
-                <label>Contact Phone:</label>
-                <input 
-                type="text" 
-                name="contactphone" 
-                onChange={handleChange} 
-                value={editStudent.contactphone} required />
-
-                <label>Contact Email:</label>
-                <input 
-                type="email" 
-                name="contactemail" 
-                onChange={handleChange}
-                value={editStudent.contactemail} required />
-
-                <label>Relationship:</label>
-                <select
-                    value={editStudent.relationship}
-                    onChange={handleChange}
-                    name="relationship"
-                    required                
-                >
-                    <option value="mother">Mother</option>                    
-                    <option value="father">Father</option>
-                    <option value="guardian">Guardian</option>
-                    <option value="grandparent">Gradparent</option>
-                    <option value="other relation">Other Relation</option>
-
-                </select>
-
-                <label>Background Info:</label>
-                <input 
-                type="text" 
-                name="backgroundinfo" 
-                onChange={handleChange}
-                value={editStudent.backgroundinfo} required />
-
-                <label>Critical Info:</label>
-                <input 
-                type="text" 
-                name="criticalinfo" 
-                onChange={handleChange}
-                value={editStudent.criticalinfo} required />
-
+                    value={editStudent.criticalinfo} required />
+                  </div>
+                  
+                </div>
                 
 
-                <button type="submit">Submit</button>
+                <div className="input-container">
+                  <div className="input-1">
+                    <input type="submit" className="" value="Submit" />
+                  </div>
+                </div>
             </form>
+          </div>
         </section>
     )
 }
