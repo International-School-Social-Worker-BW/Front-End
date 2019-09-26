@@ -1,0 +1,131 @@
+
+
+.login-page .login-form .login-btn {
+    background:#5DB0C7;
+    color: white;
+    width: 500px;
+    margin-top:15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+
+    &:hover{
+        cursor: pointer;
+        background: #6AC4DE;
+    }
+
+    @media (max-width: 500px){
+        width:300px;
+    }
+    
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    height: 1024px;
+    background-color: grey;
+    background-image: url('../images/opaque_bg.png');
+    background-size: cover;
+    margin:0;
+    
+    
+}
+
+
+.login-page img {
+    width: 100%;
+    height: auto;
+}
+
+
+.login-page .login-form {
+    flex-direction: column;
+    align-items:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 90%;
+    margin:0;
+    padding:5%;
+    // transform: translate(-50%, -50%);
+
+    @media (max-width: 500px){
+        width: 100%;
+        
+    }
+}
+
+
+.login-page .login-input input{
+    width:500px;
+    margin:0;
+    padding:0;
+    border:none;
+    padding:2.5%;
+
+    @media (max-width: 500px){
+        width:300px;
+    }
+}
+
+.login-page .login-input {
+    margin-bottom: 5%;
+}
+
+.login-page .login-input label {
+    color:white;
+}
+
+
+.login-page .title {
+    font-size:4rem;
+    color: white;
+    margin-bottom: 40px;
+    width: 70%;
+    text-align:center;
+
+    @media (max-width: 500px){
+        font-size:3rem;
+    }
+}
+
+.login-page .title p {
+    margin: 2%;
+}
+
+.login-page .need-account {
+    border: 3px solid white;
+    border-radius: 5px;
+    width: 90%;
+    font-size:2rem;
+    color: white;
+    margin-top: 30px;
+    text-align:center;
+
+    @media (max-width: 500px){
+        width: 100%
+    }
+}
+
+.login-page .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top:70px;
+
+    @media (max-width: 500px){
+        margin-top: 50px;
+    }
+
+}
+
+.login-page .need-account a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.login-page {
+    width: 100%;
+}

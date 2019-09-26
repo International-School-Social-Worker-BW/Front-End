@@ -1,0 +1,355 @@
+$primary-color: #384148;
+$blue:  #5DB0C7;
+$white: #fff;
+
+%section-formatting {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:145px; 
+    width: 60%;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    
+}
+
+.add-form {
+    width: 70%;
+    padding: 5%;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.add-form label{
+    color: $primary-color;
+}
+
+.student-input input {
+    width: 100%;
+    height:35px;
+    border-radius: 5px;
+    border: 1px solid $primary-color;
+    
+}
+.student-statuses .student-input select  {
+    width: 170px;
+}
+
+.disabilities .student-input select  {
+    width: 170px;
+}
+
+
+//-------------------NAME SECTION--------------------
+.name-section{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:100px; 
+    width: 100%;
+
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 150px;
+    }
+}
+
+.name-section .student-input{
+    width: 45%;
+
+    @media(max-width: 500px){
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    // margin-right: 5%;
+    // margin-left: 2%;
+}
+
+
+
+//-------------------AGE AND GRADE SECTION--------------------
+
+.age-grade{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:120px; 
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 2px solid lightgray;
+
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 200px;
+    }
+
+    // @media(max-width: 1024px){
+    //     width:80%;
+    // }
+
+    // @media(max-width: 500px){
+    //     flex-direction: column;
+    //     height: 150px;
+    //     width: 100%;
+    //     // margin-top: 20px;
+    // }
+}
+
+.age-grade .student-input{
+    width: 45%;
+    height: 100px;
+
+    @media(max-width: 500px){
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    // margin-right: 5%;
+    // margin-left: 2%;
+}
+
+
+
+
+//-------------------STUDENT STATUSES SECTION--------------------
+.student-statuses{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%; 
+    width: 80%;
+
+
+    // @media(max-width: 500px){
+    //     width:100%;
+    //     flex-direction: column;
+    //     height:200px;
+    //     margin-bottom: 50px;
+    // }
+
+    @media(max-width: 1024px){
+        width:100%;
+        flex-direction: column;
+        height:200px;
+        margin-bottom: 50px;
+    }
+
+    @media(max-width: 1330px){
+        width:85%;
+    }
+
+    @media(max-width: 1110px){
+        width:90%;
+    }
+
+    // @media(max-width: 1440px){
+    //     width:100%;
+    //     flex-direction: column;
+    //     height:200px;
+    //     margin-bottom: 50px;
+    // }
+
+
+}
+
+
+
+.student-statuses select {
+    height: 35px;
+    width: 150px;
+    color: $primary-color;
+    font-size:1.8rem;
+}
+
+//-------------------Disabilities SECTION--------------------
+.disabilities{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 30px;
+    height:145px; 
+    width: 100%;
+
+    border-bottom: 2px solid lightgray;
+
+    @media(max-width: 1024px){
+        flex-direction: column;
+        height: 260px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    @media(max-width: 500px){
+        height: 250px;
+        margin-bottom: 20px;
+    }
+
+    @media(max-width: 1330px){
+        width:105%
+    }
+
+    @media(max-width: 1110px){
+        width:110%;
+    }
+}
+
+
+.disabilities .student-input-1 {
+    width: 130px;
+    @media(max-width: 1024px){
+        width: 232px;
+        height: 295px;
+    }
+}
+
+.disabilities .student-input-2 {
+    width: 460px;
+
+    @media(max-width: 500px){
+        width: 290px;
+    }
+}
+
+.disabilities .student-input-2 label {
+    @media(max-width: 500px){
+        font-size: 1.8rem;
+    }
+
+}
+.disabilities select {
+    height: 35px;
+    color: $primary-color;
+    font-size:1.8rem;
+    width: 170px;
+}
+
+//-------------------CONTACT NAME AND PHONE NUMBER SECTION--------------------
+.contactName-phone {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:100px; 
+    width: 100%;
+    
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 180px;
+    }
+}
+
+.contactName-phone .student-input{
+    width: 45%;
+    @media(max-width: 500px){
+        width: 100%;
+    }
+}
+
+//-------------------EMAIL AND RELATIOINSHIP SECTION--------------------
+.email-relationship {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    height:120px; 
+    width: 100%;
+    padding-bottom: 30px;
+    border-bottom: 2px solid lightgray;
+
+
+    @media(max-width: 500px){
+        flex-direction: column;
+        height: 210px;
+    }
+}
+
+.email-relationship .student-input{
+    width: 45%;
+    @media(max-width: 500px){
+        width: 100%;
+    }
+}
+
+.email-relationship select{
+    height: 35px;
+    color: $primary-color;
+    font-size:1.8rem;
+}
+
+
+//-------------------SOCIAL HISTORY/BACKGROUND SECTION--------------------
+.history-info{
+    margin-bottom: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    font-size:1.8rem;
+}
+
+.history-info textarea{
+    height: 150px;
+    padding: 2%;
+}
+
+
+//-------------------CRITICAL INFORMATION SECTION--------------------
+.critical-info{
+    margin-bottom: 40px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    font-size:1.8rem;
+}
+
+.critical-info textarea{
+    height: 150px;
+    padding: 2%;
+}
+
+
+
+
+//-------------------BUTTON SECTION--------------------
+.submit-btn{
+    margin-bottom: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    font-size:1.8rem;
+}
+
+.add-form button {
+    height: 40px;
+    background-color: $blue;
+    border-radius: 5px;
+    border:none;
+    color: white;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    font-weight: bold;
+    font-size: 1.8rem;
+
+    &:hover{
+        cursor: pointer;
+        background: #6AC4DE;
+    }
+}
+
