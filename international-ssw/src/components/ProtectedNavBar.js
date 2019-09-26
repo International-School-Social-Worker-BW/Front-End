@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MdHome, MdArrowDropDown } from 'react-icons/md'
+
+import { MdHome, MdArrowDropDown, MdPerson } from 'react-icons/md'
+import { fetchUser } from '../store/actions';
+import { connect } from 'react-redux';
+
 
 class ProtectedNavBar extends React.Component {
 
@@ -9,7 +13,9 @@ class ProtectedNavBar extends React.Component {
     <header className='top-header protected-nav'>
       <div className="container header-nav protected-nav">
         <div className="logo">
-          <Link to="/">Educell</Link>
+          <Link to="/protected">
+            <img className="logo-img" src="../../../assets/logo.png" alt="Educell Logo"/>
+          </Link>
         </div>
 
         <nav>
@@ -21,7 +27,9 @@ class ProtectedNavBar extends React.Component {
             </li>
             <li className="user">
               <a href="" className="trigger">
-                <span>Jon</span>
+
+                <span><MdPerson /></span>
+
                 <span className="caret">
                   <MdArrowDropDown />
                 </span>
