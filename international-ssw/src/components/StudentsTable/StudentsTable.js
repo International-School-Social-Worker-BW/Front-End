@@ -1,10 +1,6 @@
 import React from 'react';
 import { Header } from './Header';
 import { RowData } from './RowData';
-import { NavLink } from 'react-router-dom';
-
-// // Some dummy data
-// import data from '../../utils/dummyData';
 
 export const StudentsTable = (props) => {
   
@@ -15,8 +11,7 @@ export const StudentsTable = (props) => {
         <Header />
         <tbody>
           {props.student.map(student => (
-            <NavLink to={`/student/${student.studentid}`} style={{ textDecoration: 'none', color: 'green', display: 'flex' }}>
-            <RowData key={student.studentid} student={student}/></NavLink>
+              <RowData key={student.studentid} student={student}/>
           ))}
         </tbody>
         <tfoot>
