@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
-import { addRole, fetchUser } from '../store/actions';
+import { addRole } from '../store/actions';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 
 
@@ -10,16 +10,13 @@ const RoleSelect = props => {
         roleid: null
     });
 console.log('roleprops', props);
-    useEffect(() => {
-        
-        
-
+    useEffect(() => {  
         axiosWithAuth()
             .get(`/users/getcurrentuser`)
             .then(res => {setUserrole({...userrole, user: res.data})
             console.log('useeeffect', res.data)})
             .catch(err => console.log(err)); 
-    }, []);
+    }, [userrole]);
     
 
     const handleChange = event => {

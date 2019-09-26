@@ -44,8 +44,6 @@ handleSubmit = e => {
 
     this.props.history.push('/protected');
 }
-
-
     handleChange = event => {
         console.log(this.state)
         event.preventDefault();

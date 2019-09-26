@@ -1,6 +1,4 @@
-import {NavLink} from 'react-router-dom';
-
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth.js';
 import ProtectedNavBar from './ProtectedNavBar.js';
 
@@ -28,9 +26,7 @@ export default function EditStudent (props) {
 
     const handleChange = e => {
         setEditStudent({...editStudent, [e.target.name]: e.target.value})
-    }
-
-  
+    } 
 
     const handleSubmit = e => {
         e.preventDefault()

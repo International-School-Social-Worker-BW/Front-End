@@ -6,37 +6,28 @@ import {
   
   const initialState = {
     error: '',
-    fetchingData: false,
-    users: [],
-    addUser: []
+    fetchingData: false
   };
   
-  export const registrationReducer = (state = initialState, action) => {
+export const registrationReducer = (state = initialState, action) => {
     switch (action.type) {
       case ADD_USER:
         return {
           ...state,
-          error: '',
-          fetchingData: true
-          
+          fetchingData: true  
         };
       case REGISTRATION_SUCCESS:
         return {
           ...state,
-          addUser: action.payload,
-          error: '',
-          fetchingData: false,
-          username: action.payload
-          
+          fetchingData: false                    
         };
       case REGISTRATION_FAILURE:
-        console.log('regfail', action.payload)
           return {
               ...state,
               error: action.payload,
               fetchingData: false
-          }
+          };
       default:
-          return state 
+          return state;
     }  
-  }
+};

@@ -30,18 +30,9 @@ const Login = (props) => {
     }
   
     return (
-
-      // <div className="login-section">
-      //   <div className="logo-title">
-      //     <Link to="/">Educell</Link>
-      //   </div>
-      //   <div className="login-page">
-      //     <div className="login-header">
-      //       Sign In
-      //     </div>
-          <form className='login-form' onSubmit={handleSubmit}>      
-            <Input className = "login-input">
-              <label htmlFor="username">Email or Username</label>
+      <form className='login-form' onSubmit={handleSubmit}>      
+        <Input className = "login-input">
+            <label htmlFor="username">Email or Username</label>
               <input
                 id="username"
                 type='text'
@@ -50,12 +41,10 @@ const Login = (props) => {
                 value={credentials.useremail}
                 required
               />
-            </Input>
-
+        </Input>            
             
-            
-            <Input className = "login-input">
-              <label htmlFor="password">Password</label>
+        <Input className = "login-input">
+            <label htmlFor="password">Password</label>
               <input
                   type='password'
                   name='password'
@@ -63,9 +52,9 @@ const Login = (props) => {
                   value={credentials.password}
                   required
                 />
-            </Input>
-            <button className = "login-btn">Login</button>
-          </form>
+        </Input>
+        <button className = "login-btn">Login</button>
+      </form>
     );
   };
   

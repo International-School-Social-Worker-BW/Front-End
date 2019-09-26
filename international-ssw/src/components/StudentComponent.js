@@ -6,12 +6,10 @@ const StudentComponent = props => {
     const [student, setStudent] = useState({});
     useEffect(() => {
         const id = props.match.params.id;
-        
-
         axiosWithAuth()
-            .get(`/students/student/${id}`)
-            .then(res => setStudent(res.data))
-            .catch(err => console.log(err));
+           .get(`/students/student/${id}`)
+           .then(res => setStudent(res.data))
+           .catch(err => console.log(err));
     }, [props.match.params.id]);
     console.log(props.match.params.id);
     return(

@@ -3,7 +3,7 @@
 import React from "react";
 import ProtectedNavBar from './ProtectedNavBar.js';
 import { Link, withRouter } from 'react-router-dom';
-import { fetchStudents, fetchUser } from '../store/actions';
+import { fetchStudents } from '../store/actions';
 import { connect } from 'react-redux';
 import { StudentsTable } from './StudentsTable/StudentsTable';
 import Pagination from './Pagination.js';
