@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import { StudentsTable } from './StudentsTable/StudentsTable';
 import Pagination from './Pagination.js';
 
-
 class UserHomePage extends React.Component {  
     
     componentDidMount(){
@@ -27,14 +26,16 @@ class UserHomePage extends React.Component {
             
             <ProtectedNavBar />
             <div className="container home-page-content">
-            <h1>Ghana Makes A Difference</h1>
-            
-            <Link to='/add'><button>Add Student</button></Link>
-            
-            <div className="students-list">
-                <StudentsTable student={this.props.data} />
-            </div>
-            <Pagination />
+              <h1>Ghana Makes A Difference</h1>
+              
+              <Link to='/add' className="add-student-btn">
+                Add Student
+              </Link>
+              
+              <div className="students-list">
+                  <StudentsTable student={this.props.data} />
+              </div>
+              <Pagination />
             </div>
         </section>
     )}
