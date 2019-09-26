@@ -13,8 +13,8 @@ const Input = styled.div `
 const Login = (props) => {
    
     const [credentials, setCredentials] = useState({
-      useremail: 'jon@jon.com',
-      password: 'password'
+      useremail: '',
+      password: ''
     });
   
     const handleChange = event => {

@@ -29,16 +29,16 @@ export default function EditStudent (props) {
     } 
 
     const handleSubmit = e => {
+      console.log('editMadeit', editStudent)
         e.preventDefault()
         axiosWithAuth()
         .put(`/students/student/${props.match.params.studentid}`, editStudent)
         .then(res => {
-            setEditStudent(editingState)
             props.history.push(`/protected`)
         })
         .catch(err => console.log(err))
     }
-    console.log(editStudent)
+    console.log(editStudent);
     return (
         <section className="edit-student-page">
            <ProtectedNavBar />
