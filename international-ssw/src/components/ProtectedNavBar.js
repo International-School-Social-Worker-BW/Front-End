@@ -13,7 +13,7 @@ class ProtectedNavBar extends React.Component {
     <header className='top-header protected-nav'>
       <div className="container header-nav protected-nav">
         <div className="logo">
-          <Link to="/protected">
+          <Link to="/">
             <img className="logo-img" src="../../../assets/logo.png" alt="Educell Logo"/>
           </Link>
         </div>
@@ -39,7 +39,7 @@ class ProtectedNavBar extends React.Component {
                   <a href="#">Profile</a>
                 </li>
                 <li>
-                  <Link to="/logout">Log Out</Link>
+                  <Link to="/" onClick={() => localStorage.clear()}>Log Out</Link>
                 </li>
               </ul>
               <Link to="/signup">
